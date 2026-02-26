@@ -1,0 +1,8 @@
+# this file contains the social media links and usernames of the author
+# the socials will be displayed in the order they are defined here
+email: your.email@example.com # your email address
+github_username: jhbyun # your GitHub username
+# google_scholar_userid: # your Google Scholar ID (uncomment and fill in)
+# linkedin_username: # your LinkedIn username (uncomment and fill in)
+# x_username: # your X (Twitter) username (uncomment and fill in)
+rss_icon: true
