@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://jhbyun.github.io/sitemap.xml
+Sitemap: https://jihyuk-byun.github.io/jhbyun.github.io/sitemap.xml
