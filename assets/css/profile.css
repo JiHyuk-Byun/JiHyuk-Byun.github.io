@@ -1,0 +1,289 @@
+/* Site-specific polish for a compact academic profile layout. */
+:root {
+  --global-theme-color: #5f86d8;
+  --global-hover-color: #436ebf;
+  --global-text-color: #111;
+  --global-text-color-light: #5f6368;
+  --global-divider-color: rgba(32, 33, 36, 0.14);
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family:
+    "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.58;
+  letter-spacing: 0;
+}
+
+.container {
+  max-width: 980px;
+}
+
+.navbar {
+  opacity: 0.98;
+}
+
+.navbar.navbar-light .navbar-brand,
+.navbar.navbar-light .navbar-nav .nav-item .nav-link {
+  font-size: 0.94rem;
+}
+
+.navbar.navbar-light .navbar-nav .nav-item.active > .nav-link {
+  color: var(--global-theme-color);
+  font-weight: 600;
+}
+
+.post-title {
+  font-size: 2.85rem;
+  line-height: 1.15;
+  margin-bottom: 1.55rem;
+}
+
+.post .desc,
+.post-description {
+  color: var(--global-text-color-light);
+  font-size: 1rem;
+}
+
+.profile-home .intro p {
+  font-size: 1.12rem;
+  line-height: 1.52;
+  margin-bottom: 0.8rem;
+}
+
+.profile-summary {
+  align-items: center;
+  display: grid;
+  gap: 3.2rem;
+  grid-template-columns: 300px minmax(0, 1fr);
+  margin-bottom: 2rem;
+}
+
+.profile-photo-card {
+  margin-top: 0;
+}
+
+.profile-photo-card img {
+  border: 0;
+  border-radius: 0;
+  display: block;
+  object-fit: cover;
+  object-position: center 20%;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+}
+
+.profile-links {
+  margin-top: 1.35rem;
+  margin-bottom: 0;
+}
+
+.profile-links a {
+  align-items: center;
+  background: #666;
+  border-radius: 50%;
+  color: #fff;
+  display: inline-flex;
+  font-size: 1.22rem;
+  height: 2.15rem;
+  justify-content: center;
+  margin-right: 0.55rem;
+  text-decoration: none;
+  width: 2.15rem;
+}
+
+.profile-links a.cv-link {
+  background: #666;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  height: 2.15rem;
+  letter-spacing: 0;
+  line-height: 2.15rem;
+  padding-top: 0.02rem;
+  text-align: center;
+  width: 2.15rem;
+}
+
+.profile-links a:hover {
+  background: var(--global-theme-color);
+}
+
+.profile-links a.cv-link:hover {
+  background: var(--global-theme-color);
+  color: #fff;
+}
+
+.profile-links a:hover {
+  text-decoration: none;
+}
+
+.profile-links i {
+  color: #fff;
+}
+
+.profile-links a:hover i {
+  color: #fff;
+}
+
+.fa-linkedin {
+  --fa: "\f08c";
+}
+
+.ai-google-scholar::before {
+  content: "\e9d4";
+}
+
+.profile-links .ai {
+  color: #fff;
+}
+
+.profile-links a:hover .ai {
+  color: #fff;
+}
+
+.section-heading {
+  border-top: 1px solid rgba(32, 33, 36, 0.16);
+  color: #777;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1.78rem;
+  font-weight: 600;
+  margin-top: 2.45rem;
+  margin-bottom: 0.95rem;
+  padding-top: 1.2rem;
+  padding-bottom: 0;
+}
+
+.section-heading a {
+  color: inherit;
+}
+
+.news a strong {
+  border-bottom: 1px solid currentColor;
+}
+
+.news table th,
+.news table td {
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  vertical-align: top;
+}
+
+.news table th {
+  color: #333;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.friendly-list {
+  margin-top: 0;
+  padding-left: 1.2rem;
+}
+
+.friendly-list li {
+  margin-bottom: 0.55rem;
+}
+
+.friendly-list .sub {
+  color: var(--global-text-color-light);
+  display: block;
+  font-size: 0.96rem;
+  margin-top: 0.08rem;
+}
+
+.publications {
+  margin-top: 1rem;
+}
+
+.publications ol.bibliography li {
+  margin-bottom: 1.55rem;
+}
+
+.publications ol.bibliography li .title {
+  font-size: 1.02rem;
+  font-weight: 600;
+}
+
+.publications ol.bibliography li .author,
+.publications ol.bibliography li .periodical {
+  font-size: 0.96rem;
+}
+
+.publications ol.bibliography li .author .me {
+  border-bottom: 1px solid currentColor;
+  font-weight: 700;
+}
+
+.publications ol.bibliography li .links {
+  margin-top: 0.25rem;
+}
+
+.publications ol.bibliography li .links a.btn {
+  border-color: var(--global-divider-color);
+  border-radius: 4px;
+  font-size: 0.78rem;
+  line-height: 1.25;
+  margin-right: 0.25rem;
+  padding: 0.18rem 0.55rem;
+  text-transform: none;
+}
+
+.pub-thumb {
+  background: #f3f6f9;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 4px;
+  display: block;
+  height: 108px;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.publications ol.bibliography li .abbr .pub-thumb {
+  margin-bottom: 0.5rem;
+}
+
+.cv .card,
+.projects .card {
+  border: 1px solid var(--global-divider-color);
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+footer.fixed-bottom {
+  position: static;
+  margin-top: 3rem;
+}
+
+body {
+  padding-bottom: 0;
+}
+
+@media (max-width: 575px) {
+  .post-title {
+    font-size: 1.95rem;
+  }
+
+  .profile-summary {
+    display: block;
+  }
+
+  .profile-photo-card {
+    margin: 0 0 1.5rem;
+    max-width: 260px;
+  }
+
+  .profile-links a {
+    margin-bottom: 0.25rem;
+  }
+
+  .pub-thumb {
+    height: auto;
+    max-height: 160px;
+    object-fit: contain;
+  }
+}
