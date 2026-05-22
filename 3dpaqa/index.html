@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>3D-PAQA | JiHyuk Byun</title>
+    <meta name="author" content="JiHyuk Byun">
+    <meta name="description" content="Project page for 3D-PAQA: Towards Preference-Aligned 3D Quality Assessment.">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/mdb.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/profile.css">
+    <script src="/assets/js/theme.js"></script>
+    <script>initTheme();</script>
+  </head>
+  <body class="project-standalone">
+    <header class="project-sitebar">
+      <div class="container">
+        <a class="project-mark" href="/3dpaqa/">3D-PAQA</a>
+        <nav aria-label="3D-PAQA project navigation">
+          <a class="active" href="/3dpaqa/">Overview</a>
+          <a href="/3dpaqa/details/">Details</a>
+          <a href="/assets/pdf/2025QA3D.pdf" target="_blank" rel="noopener noreferrer">Paper</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container project-shell" role="main">
+      <article class="post project-page">
+        <header class="post-header">
+          <div class="project-kicker">3D Quality Assessment</div>
+          <h1 class="post-title">3D-PAQA</h1>
+          <p class="project-lead">Towards preference-aligned quality assessment for real 3D assets with natural artifacts, criterion-wise diagnosis, and scalable supervision.</p>
+          <p class="project-authors"><strong>JiHyuk Byun</strong> and <a href="https://www.ciplab.kr/members/professor" rel="external nofollow noopener" target="_blank">Seon Joo Kim</a></p>
+          <p class="project-venue">Workshops on Image Processing and Image Understanding (IPIU), 2026</p>
+          <div class="project-actions">
+            <a class="btn btn-outline-primary z-depth-0" href="/assets/pdf/2025QA3D.pdf" target="_blank" rel="noopener noreferrer">Paper</a>
+            <span class="btn is-soon" aria-disabled="true">Code Coming Soon</span>
+            <span class="btn is-soon" aria-disabled="true">Dataset Coming Soon</span>
+          </div>
+        </header>
+
+        <section class="paqa-hero">
+          <div class="paqa-copy">
+            <h2>Why 3D-PAQA?</h2>
+            <p>Conventional 3D quality assessment often measures controlled synthetic distortions. Real 3D repositories are different: assets vary in geometry, texture, material, plausibility, artifacts, and the quality judgments people actually prefer.</p>
+            <p>3D-PAQA reframes the task as direct per-asset scoring. Given an arbitrary 3D asset, it predicts a quality vector across human-relevant criteria without a pristine reference or expensive pairwise A/B comparison.</p>
+            <div class="paqa-compare">
+              <section>
+                <h3>Distortion-centric 3D-QA</h3>
+                <ul>
+                  <li>Synthetic degradations</li>
+                  <li>Reference-oriented fidelity</li>
+                  <li>Severity of distortion</li>
+                </ul>
+              </section>
+              <section>
+                <h3>3D-PAQA</h3>
+                <ul>
+                  <li>Natural artifacts</li>
+                  <li>Human-aligned preference</li>
+                  <li>Absolute quality of each asset</li>
+                </ul>
+              </section>
+            </div>
+          </div>
+          <figure class="paqa-figure">
+            <img src="/assets/img/publication_teasers/qa3d_teaser.png" alt="3D-PAQA annotation overview with exemplar anchors and MLLM prompts">
+            <figcaption>Exemplar-anchored visual and textual prompting stabilizes criterion-wise annotations for 3D assets.</figcaption>
+          </figure>
+        </section>
+
+        <section class="paqa-stats" aria-label="3D-PAQA highlights">
+          <div class="paqa-stat"><strong>260K+</strong><span>3D assets for preference-aligned supervision</span></div>
+          <div class="paqa-stat"><strong>10</strong><span>semantic domains sampled from real asset collections</span></div>
+          <div class="paqa-stat"><strong>6</strong><span>holistic and component-level quality criteria</span></div>
+          <div class="paqa-stat"><strong>33M</strong><span>parameter 3D evaluator distilled from annotations</span></div>
+        </section>
+
+        <section class="paqa-section">
+          <h2>What the project contributes</h2>
+          <div class="paqa-criteria">
+            <section>
+              <h3>New task</h3>
+              <p>3D-PAQA evaluates the quality of an individual 3D asset through a human-aligned quality vector.</p>
+            </section>
+            <section>
+              <h3>Scalable labels</h3>
+              <p>Exemplar anchors and relative ranking turn subjective MLLM judgments into stable large-scale annotations.</p>
+            </section>
+            <section>
+              <h3>Efficient evaluator</h3>
+              <p>A compact 3D-native model predicts criterion-wise quality signals for evaluation and curation workflows.</p>
+            </section>
+          </div>
+        </section>
+      </article>
+    </main>
+
+  </body>
+</html>
