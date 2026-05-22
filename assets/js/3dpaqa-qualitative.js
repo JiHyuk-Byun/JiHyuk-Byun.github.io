@@ -153,8 +153,10 @@ if (qualitative) {
     };
 
     const materialMap = (source) => {
-      const map = source.metalnessMap || source.roughnessMap;
-      const fallback = source.metalness ?? source.roughness ?? 0.65;
+      const map = source.roughnessMap || source.metalnessMap;
+      const roughness = source.roughness ?? 1;
+      const metalness = source.metalness ?? 0;
+      const fallback = (roughness + metalness) / 2;
       const material = new THREE.MeshBasicMaterial({
         color: map ? 0xffffff : new THREE.Color(fallback, fallback, fallback),
         map,
@@ -162,6 +164,29 @@ if (qualitative) {
         skinning: source.skinning,
         morphTargets: source.morphTargets,
       });
+
+      if (map) {
+        material.onBeforeCompile = (shader) => {
+          shader.uniforms.paqaMaterialFactors = {
+            value: new THREE.Vector2(roughness, metalness),
+          };
+          shader.fragmentShader = `uniform vec2 paqaMaterialFactors;\n${shader.fragmentShader}`;
+          shader.fragmentShader = shader.fragmentShader.replace(
+            "#include <map_fragment>",
+            `
+              #ifdef USE_MAP
+                vec4 paqaPackedMaterial = texture2D(map, vMapUv);
+                float paqaRoughness = paqaPackedMaterial.g * paqaMaterialFactors.x;
+                float paqaMetalness = paqaPackedMaterial.b * paqaMaterialFactors.y;
+                float paqaComposite = clamp((paqaRoughness + paqaMetalness) * 0.5, 0.0, 1.0);
+                diffuseColor.rgb *= vec3(paqaComposite);
+              #endif
+            `,
+          );
+        };
+        material.customProgramCacheKey = () => "paqa-material-grayscale";
+      }
+
       renderMaterials.push(material);
       return material;
     };
