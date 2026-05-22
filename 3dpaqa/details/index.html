@@ -1,17 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <title>3D-PAQA Details | JiHyuk Byun</title>
-    <meta name="author" content="JiHyuk Byun">
-    <meta name="description" content="Detailed project overview for 3D-PAQA: Towards Preference-Aligned 3D Quality Assessment.">
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/mdb.min.css">
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="stylesheet" href="/assets/css/profile.css">
+    <meta name="author" content="JiHyuk Byun" />
+    <meta
+      name="description"
+      content="Detailed project overview for 3D-PAQA: Towards Preference-Aligned 3D Quality Assessment."
+    />
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/mdb.min.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/profile.css" />
     <script src="/assets/js/theme.js"></script>
-    <script>initTheme();</script>
+    <script>
+      initTheme();
+    </script>
   </head>
   <body class="project-standalone">
     <header class="project-sitebar">
@@ -20,7 +28,12 @@
         <nav aria-label="3D-PAQA project navigation">
           <a href="/3dpaqa/">Overview</a>
           <a class="active" href="/3dpaqa/details/">Details</a>
-          <a href="/assets/pdf/2025QA3D.pdf" target="_blank" rel="noopener noreferrer">Paper</a>
+          <a
+            href="/assets/pdf/2025QA3D.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Paper</a
+          >
         </nav>
       </div>
     </header>
@@ -29,12 +42,14 @@
       <article class="post project-page">
         <header class="post-header">
           <div class="project-kicker">3D-PAQA Details</div>
-          <h1 class="post-title">Preference-aligned 3D quality, step by step</h1>
-          <p class="project-lead">The project builds criterion-wise supervision for real 3D assets, validates its alignment with human judgment, and distills it into an efficient 3D evaluator.</p>
-          <div class="project-actions">
-            <a class="btn btn-outline-primary z-depth-0" href="/3dpaqa/">Overview</a>
-            <a class="btn btn-primary z-depth-0" href="/assets/pdf/2025QA3D.pdf" target="_blank" rel="noopener noreferrer">Paper</a>
-          </div>
+          <h1 class="post-title">
+            Preference-aligned 3D quality, step by step
+          </h1>
+          <p class="project-lead">
+            The project builds criterion-wise supervision for real 3D assets,
+            validates its alignment with human judgment, and distills it into an
+            efficient 3D evaluator.
+          </p>
         </header>
 
         <div class="paqa-deck">
@@ -42,15 +57,33 @@
             <div class="paqa-slide-copy">
               <span class="paqa-slide-number">01 / Motivation</span>
               <h2>Real 3D assets need a different quality target.</h2>
-              <p>Most existing 3D-QA benchmarks start from a small set of clean objects and inject synthetic degradations such as noise, compression, or downsampling. That setup measures distortion severity, but it does not fully capture naturally occurring artifacts in diverse asset repositories.</p>
+              <p>
+                Most existing 3D-QA benchmarks start from a small set of clean
+                objects and inject synthetic degradations such as noise,
+                compression, or downsampling. That setup measures distortion
+                severity, but it does not fully capture naturally occurring
+                artifacts in diverse asset repositories.
+              </p>
               <ul>
-                <li>Asset quality is shaped by geometry, texture, material, plausibility, and visible artifacts.</li>
-                <li>Human preference matters for evaluation, curation, and downstream generation pipelines.</li>
+                <li>
+                  Asset quality is shaped by geometry, texture, material,
+                  plausibility, and visible artifacts.
+                </li>
+                <li>
+                  Human preference matters for evaluation, curation, and
+                  downstream generation pipelines.
+                </li>
               </ul>
             </div>
             <figure class="paqa-figure">
-              <img src="/assets/img/3dpaqa/task-definition.png" alt="Task definition slide for 3D-PAQA">
-              <figcaption>3D-PAQA maps an arbitrary 3D asset to a criterion-wise quality vector.</figcaption>
+              <img
+                src="/assets/img/3dpaqa/task-definition.png"
+                alt="Task definition slide for 3D-PAQA"
+              />
+              <figcaption>
+                3D-PAQA maps an arbitrary 3D asset to a criterion-wise quality
+                vector.
+              </figcaption>
             </figure>
           </section>
 
@@ -58,8 +91,16 @@
             <div class="paqa-slide-copy">
               <span class="paqa-slide-number">02 / Task</span>
               <h2>Direct per-asset scoring replaces reference dependence.</h2>
-              <p>The task estimates a quality vector for an arbitrary 3D asset. It does not require a pristine reference, an artificial distortion operator, or pairwise A/B aggregation for every target asset.</p>
-              <div class="paqa-note">The six axes cover holistic preference, plausibility, artifacts, and component-level geometry, texture, and material quality.</div>
+              <p>
+                The task estimates a quality vector for an arbitrary 3D asset.
+                It does not require a pristine reference, an artificial
+                distortion operator, or pairwise A/B aggregation for every
+                target asset.
+              </p>
+              <div class="paqa-note">
+                The six axes cover holistic preference, plausibility, artifacts,
+                and component-level geometry, texture, and material quality.
+              </div>
             </div>
             <div class="paqa-criteria">
               <section>
@@ -80,7 +121,10 @@
               </section>
               <section>
                 <h3>Output</h3>
-                <p>A quality vector that can diagnose where an asset is strong or weak.</p>
+                <p>
+                  A quality vector that can diagnose where an asset is strong or
+                  weak.
+                </p>
               </section>
             </div>
           </section>
@@ -89,16 +133,35 @@
             <div class="paqa-slide-copy">
               <span class="paqa-slide-number">03 / Annotation</span>
               <h2>Exemplar anchors ground subjective judgments.</h2>
-              <p>The large-scale annotation pipeline injects human preference through stratified exemplar anchors. Each target is shown with multi-view evidence and quality-spanning references so the MLLM judgment is grounded by examples.</p>
+              <p>
+                The large-scale annotation pipeline injects human preference
+                through stratified exemplar anchors. Each target is shown with
+                multi-view evidence and quality-spanning references so the MLLM
+                judgment is grounded by examples.
+              </p>
               <ul>
-                <li>Visual prompting supplies criterion-specific exemplar anchors.</li>
-                <li>Relative Ranking positions the target among anchored quality levels.</li>
-                <li>Repeated anchor sampling and ensembling reduce anchor-specific bias.</li>
+                <li>
+                  Visual prompting supplies criterion-specific exemplar anchors.
+                </li>
+                <li>
+                  Relative Ranking positions the target among anchored quality
+                  levels.
+                </li>
+                <li>
+                  Repeated anchor sampling and ensembling reduce anchor-specific
+                  bias.
+                </li>
               </ul>
             </div>
             <figure class="paqa-figure">
-              <img src="/assets/img/publication_teasers/qa3d_teaser.png" alt="3D-PAQA annotation process with exemplar images and Qwen2-VL">
-              <figcaption>The annotation process combines visual prompts, criteria instructions, and relative ranking outputs.</figcaption>
+              <img
+                src="/assets/img/publication_teasers/qa3d_teaser.png"
+                alt="3D-PAQA annotation process with exemplar images and Qwen2-VL"
+              />
+              <figcaption>
+                The annotation process combines visual prompts, criteria
+                instructions, and relative ranking outputs.
+              </figcaption>
             </figure>
           </section>
 
@@ -106,16 +169,28 @@
             <div class="paqa-slide-copy">
               <span class="paqa-slide-number">04 / Dataset</span>
               <h2>The supervision scales across assets and criteria.</h2>
-              <p>3D-PAQA gathers preference-aligned annotations for over 260K Objaverse-based assets across ten semantic domains. The criteria separate overall perception from component-level weaknesses.</p>
+              <p>
+                3D-PAQA gathers preference-aligned annotations for over 260K
+                Objaverse-based assets across ten semantic domains. The criteria
+                separate overall perception from component-level weaknesses.
+              </p>
               <ul>
                 <li>Natural artifacts instead of hand-injected distortions.</li>
-                <li>Six quality signals for richer diagnosis than one global score.</li>
+                <li>
+                  Six quality signals for richer diagnosis than one global
+                  score.
+                </li>
                 <li>MLLM-aligned labels designed for training and analysis.</li>
               </ul>
             </div>
             <figure class="paqa-figure">
-              <img src="/assets/img/3dpaqa/dataset-overview.png" alt="Dataset overview slide for 3D-PAQA">
-              <figcaption>Dataset overview from the project presentation.</figcaption>
+              <img
+                src="/assets/img/3dpaqa/dataset-overview.png"
+                alt="Dataset overview slide for 3D-PAQA"
+              />
+              <figcaption>
+                Dataset overview from the project presentation.
+              </figcaption>
             </figure>
           </section>
 
@@ -123,16 +198,35 @@
             <div class="paqa-slide-copy">
               <span class="paqa-slide-number">05 / Evaluator</span>
               <h2>A compact 3D model distills the quality signal.</h2>
-              <p>The project trains a lightweight evaluator on 3D-PAQA annotations. A Point Transformer-v3 backbone predicts criterion-wise quality directly from sampled 3D features.</p>
+              <p>
+                The project trains a lightweight evaluator on 3D-PAQA
+                annotations. A Point Transformer-v3 backbone predicts
+                criterion-wise quality directly from sampled 3D features.
+              </p>
               <ul>
-                <li>Inputs include point cloud signals such as RGB, normals, and PBR attributes.</li>
-                <li>The evaluator has 33M parameters, roughly 0.046% of the 72B teacher scale.</li>
-                <li>Preference-aligned supervision remains useful after distillation.</li>
+                <li>
+                  Inputs include point cloud signals such as RGB, normals, and
+                  PBR attributes.
+                </li>
+                <li>
+                  The evaluator has 33M parameters, roughly 0.046% of the 72B
+                  teacher scale.
+                </li>
+                <li>
+                  Preference-aligned supervision remains useful after
+                  distillation.
+                </li>
               </ul>
             </div>
             <figure class="paqa-figure">
-              <img src="/assets/img/3dpaqa/evaluator.png" alt="Efficient 3D evaluator slide for 3D-PAQA">
-              <figcaption>The distilled evaluator predicts the same criterion-wise quality structure from 3D features.</figcaption>
+              <img
+                src="/assets/img/3dpaqa/evaluator.png"
+                alt="Efficient 3D evaluator slide for 3D-PAQA"
+              />
+              <figcaption>
+                The distilled evaluator predicts the same criterion-wise quality
+                structure from 3D features.
+              </figcaption>
             </figure>
           </section>
 
@@ -140,26 +234,51 @@
             <div class="paqa-slide-copy">
               <span class="paqa-slide-number">06 / Evidence</span>
               <h2>Criterion-wise scores become diagnostic signals.</h2>
-              <p>The analysis shows that 3D-PAQA annotations align with human preferences and capture perceptual quality beyond simple geometry complexity. Component-level axes also reveal localized failures.</p>
+              <p>
+                The analysis shows that 3D-PAQA annotations align with human
+                preferences and capture perceptual quality beyond simple
+                geometry complexity. Component-level axes also reveal localized
+                failures.
+              </p>
               <ul>
-                <li>72B relative ranking is adopted for preference-aligned supervision.</li>
-                <li>The compact evaluator achieves strong human alignment on overall preference.</li>
-                <li>High geometry quality does not guarantee strong texture or material quality.</li>
+                <li>
+                  72B relative ranking is adopted for preference-aligned
+                  supervision.
+                </li>
+                <li>
+                  The compact evaluator achieves strong human alignment on
+                  overall preference.
+                </li>
+                <li>
+                  High geometry quality does not guarantee strong texture or
+                  material quality.
+                </li>
               </ul>
             </div>
             <figure class="paqa-figure">
-              <img src="/assets/img/3dpaqa/diagnostic-signals.png" alt="3D-PAQA diagnostic signals slide showing geometry and texture scores">
-              <figcaption>Lower-scoring criteria point to the asset component that needs attention.</figcaption>
+              <img
+                src="/assets/img/3dpaqa/diagnostic-signals.png"
+                alt="3D-PAQA diagnostic signals slide showing geometry and texture scores"
+              />
+              <figcaption>
+                Lower-scoring criteria point to the asset component that needs
+                attention.
+              </figcaption>
             </figure>
           </section>
         </div>
 
         <section class="paqa-limitations">
           <h2>Applications and current limits</h2>
-          <p>The quality signal can support evaluation, repository curation, and future quality-guided generation or refinement. The current work builds the supervision and evaluator foundation; full downstream validation, transfer to AI-generated assets, and application-specific model ranking remain future work.</p>
+          <p>
+            The quality signal can support evaluation, repository curation, and
+            future quality-guided generation or refinement. The current work
+            builds the supervision and evaluator foundation; full downstream
+            validation, transfer to AI-generated assets, and
+            application-specific model ranking remain future work.
+          </p>
         </section>
       </article>
     </main>
-
   </body>
 </html>

@@ -1,0 +1,911 @@
+[
+  {
+    "objaverse_index": "000-036/08b47d2396d543f59d80a56350247815.glb",
+    "dictionary_index": "000-036",
+    "object_index": "08b47d2396d543f59d80a56350247815.glb",
+    "object_uid": "08b47d2396d543f59d80a56350247815",
+    "gobjaverse_index": "36/190175",
+    "category_label": "Electronics",
+    "caption": "a yellow and black handheld electrical tester with a cord and wires attached to it.",
+    "vlm_scores": {
+      "geometry": 3.2,
+      "texture": 4.2,
+      "material": 3.0,
+      "plausibility": 4.0,
+      "artifacts": 4.2,
+      "preference": 4.8
+    },
+    "human_scores": {
+      "geometry": 4.142857142857143,
+      "texture": 4.214285714285714,
+      "material": 4.071428571428571,
+      "plausibility": 4.285714285714286,
+      "artifacts": 4.285714285714286,
+      "preference": 4.428571428571429
+    },
+    "cells": [
+      {
+        "row": 2,
+        "column": 3,
+        "criterion": "texture",
+        "cell_glb_filename": "row02_texture_col03_08b47d2396d543f59d80a56350247815.glb"
+      }
+    ]
+  },
+  {
+    "objaverse_index": "000-139/129bda0773c24a0e8c911c0b3de4d4cf.glb",
+    "dictionary_index": "000-139",
+    "object_index": "129bda0773c24a0e8c911c0b3de4d4cf.glb",
+    "object_uid": "129bda0773c24a0e8c911c0b3de4d4cf",
+    "gobjaverse_index": "139/705348",
+    "category_label": "Daily-Used",
+    "caption": "White sphere",
+    "vlm_scores": {
+      "geometry": 1.4,
+      "texture": 1.0,
+      "material": 1.6,
+      "plausibility": 1.4,
+      "artifacts": 4.2,
+      "preference": 1.4
+    },
+    "human_scores": {
+      "geometry": 1.5714285714285714,
+      "texture": 1.0714285714285714,
+      "material": 1.2142857142857142,
+      "plausibility": 1.5,
+      "artifacts": 2.0,
+      "preference": 1.2142857142857142
+    },
+    "cells": [
+      {
+        "row": 1,
+        "column": 5,
+        "criterion": "geometry",
+        "cell_glb_filename": "row01_geometry_col05_129bda0773c24a0e8c911c0b3de4d4cf.glb"
+      }
+    ]
+  },
+  {
+    "objaverse_index": "000-130/1a5d97ef77004074a6b4277cd7e43200.glb",
+    "dictionary_index": "000-130",
+    "object_index": "1a5d97ef77004074a6b4277cd7e43200.glb",
+    "object_uid": "1a5d97ef77004074a6b4277cd7e43200",
+    "gobjaverse_index": "130/660535",
+    "category_label": "Animals",
+    "caption": "a small yellow and white striped fish.",
+    "vlm_scores": {
+      "geometry": 4.0,
+      "texture": 5.0,
+      "material": 4.6,
+      "plausibility": 4.4,
+      "artifacts": 4.4,
+      "preference": 3.4
+    },
+    "human_scores": {
+      "geometry": 4.142857142857143,
+      "texture": 4.071428571428571,
+      "material": 2.7142857142857144,
+      "plausibility": 3.2857142857142856,
+      "artifacts": 4.0,
+      "preference": 3.4285714285714284
+    },
+    "cells": [
+      {
+        "row": 1,
+        "column": 2,
+        "criterion": "geometry",
+        "cell_glb_filename": "row01_geometry_col02_1a5d97ef77004074a6b4277cd7e43200.glb"
+      },
+      {
+        "row": 6,
+        "column": 2,
+        "criterion": "preference",
+        "cell_glb_filename": "row06_preference_col02_1a5d97ef77004074a6b4277cd7e43200.glb"
+      }
+    ]
+  },
+  {
+    "objaverse_index": "000-098/25c7f09174404bb899e4a7aea6d20957.glb",
+    "dictionary_index": "000-098",
+    "object_index": "25c7f09174404bb899e4a7aea6d20957.glb",
+    "object_uid": "25c7f09174404bb899e4a7aea6d20957",
+    "gobjaverse_index": "98/500725",
+    "category_label": "Animals",
+    "caption": "sculpture of a sitting primate with hands on its head.",
+    "vlm_scores": {
+      "geometry": 4.8,
+      "texture": 4.2,
+      "material": 2.8,
+      "plausibility": 4.8,
+      "artifacts": 4.2,
+      "preference": 3.6
+    },
+    "human_scores": {
+      "geometry": 4.571428571428571,
+      "texture": 4.142857142857143,
+      "material": 2.2857142857142856,
+      "plausibility": 4.214285714285714,
+      "artifacts": 4.214285714285714,
+      "preference": 3.9285714285714284
+    },
+    "cells": [
+      {
+        "row": 5,
+        "column": 2,
+        "criterion": "artifacts",
+        "cell_glb_filename": "row05_artifacts_col02_25c7f09174404bb899e4a7aea6d20957.glb"
+      }
+    ]
+  },
+  {
+    "objaverse_index": "000-145/2883fb5c14fc44d981be18fc5ee05bed.glb",
+    "dictionary_index": "000-145",
+    "object_index": "2883fb5c14fc44d981be18fc5ee05bed.glb",
+    "object_uid": "2883fb5c14fc44d981be18fc5ee05bed",
+    "gobjaverse_index": "145/735804",
+    "category_label": "Food",
+    "caption": "a pink birthday cake with three candles and 'Happy Birthday' written on it.",
+    "vlm_scores": {
+      "geometry": 3.6,
+      "texture": 4.4,
+      "material": 2.6,
+      "plausibility": 3.2,
+      "artifacts": 3.8,
+      "preference": 2.8
+    },
+    "human_scores": {
+      "geometry": 2.9285714285714284,
+      "texture": 2.5714285714285716,
+      "material": 2.0,
+      "plausibility": 2.7857142857142856,
+      "artifacts": 3.642857142857143,
+      "preference": 2.857142857142857
+    },
+    "cells": [
+      {
+        "row": 6,
+        "column": 4,
+        "criterion": "preference",
+        "cell_glb_filename": "row06_preference_col04_2883fb5c14fc44d981be18fc5ee05bed.glb"
+      }
+    ]
+  },
+  {
+    "objaverse_index": "000-070/31aa0fb227cb47b1897084a9d23aa10f.glb",
+    "dictionary_index": "000-070",
+    "object_index": "31aa0fb227cb47b1897084a9d23aa10f.glb",
+    "object_uid": "31aa0fb227cb47b1897084a9d23aa10f",
+    "gobjaverse_index": "70/360997",
+    "category_label": "Human-Shape",
+    "caption": "a blue alien skeleton with a long neck, horn on its head, and octopus-like features.",
+    "vlm_scores": {
+      "geometry": 3.4,
+      "texture": 1.8,
+      "material": 2.2,
+      "plausibility": 2.0,
+      "artifacts": 3.8,
+      "preference": 3.4
+    },
+    "human_scores": {
+      "geometry": 3.4285714285714284,
+      "texture": 2.2142857142857144,
+      "material": 2.5,
+      "plausibility": 2.4285714285714284,
+      "artifacts": 3.2857142857142856,
+      "preference": 2.857142857142857
+    },
+    "cells": [
+      {
+        "row": 1,
+        "column": 3,
+        "criterion": "geometry",
+        "cell_glb_filename": "row01_geometry_col03_31aa0fb227cb47b1897084a9d23aa10f.glb"
+      }
+    ]
+  },
+  {
+    "objaverse_index": "000-086/3d53925857e945168a669642e68495a2.glb",
+    "dictionary_index": "000-086",
+    "object_index": "3d53925857e945168a669642e68495a2.glb",
+    "object_uid": "3d53925857e945168a669642e68495a2",
+    "gobjaverse_index": "86/441147",
+    "category_label": "Electronics",
+    "caption": "a red and black computer mouse with a red stripe and accents.",
+    "vlm_scores": {
+      "geometry": 2.6,
+      "texture": 4.2,
+      "material": 3.6,
+      "plausibility": 4.2,
+      "artifacts": 4.4,
+      "preference": 3.8
+    },
+    "human_scores": {
+      "geometry": 4.214285714285714,
+      "texture": 3.857142857142857,
+      "material": 3.642857142857143,
+      "plausibility": 4.214285714285714,
+      "artifacts": 4.357142857142857,
+      "preference": 4.142857142857143
+    },
+    "cells": [
+      {
+        "row": 3,
+        "column": 2,
+        "criterion": "material",
+        "cell_glb_filename": "row03_material_col02_3d53925857e945168a669642e68495a2.glb"
+      },
+      {
+        "row": 4,
+        "column": 1,
+        "criterion": "plausibility",
+        "cell_glb_filename": "row04_plausibility_col01_3d53925857e945168a669642e68495a2.glb"
+      }
+    ]
+  },
+  {
+    "objaverse_index": "000-074/466e5c4e87c54fb2b4a89775eca752f4.glb",
+    "dictionary_index": "000-074",
+    "object_index": "466e5c4e87c54fb2b4a89775eca752f4.glb",
+    "object_uid": "466e5c4e87c54fb2b4a89775eca752f4",
+    "gobjaverse_index": "74/381378",
+    "category_label": "Poor-quality",
+    "caption": "a small white cube with a window, resembling a house.",
+    "vlm_scores": {
+      "geometry": 1.2,
+      "texture": 1.2,
+      "material": 1.6,
+      "plausibility": 2.0,
+      "artifacts": 3.4,
+      "preference": 1.2
+    },
+    "human_scores": {
+      "geometry": 2.2857142857142856,
+      "texture": 1.0714285714285714,
+      "material": 1.2142857142857142,
+      "plausibility": 2.0,
+      "artifacts": 3.2142857142857144,
+      "preference": 1.5
+    },
+    "cells": [
+      {
+        "row": 4,
+        "column": 5,
+        "criterion": "plausibility",
+        "cell_glb_filename": "row04_plausibility_col05_466e5c4e87c54fb2b4a89775eca752f4.glb"
+      }
+    ]
+  },
+  {
+    "objaverse_index": "000-067/4c2a8438b33c4f2f80b282dd9d759b46.glb",
+    "dictionary_index": "000-067",
+    "object_index": "4c2a8438b33c4f2f80b282dd9d759b46.glb",
+    "object_uid": "4c2a8438b33c4f2f80b282dd9d759b46",
+    "gobjaverse_index": "67/346484",
+    "category_label": "Daily-Used",
+    "caption": "A small purple plastic box with holes, functioning as a holder or cover.",
+    "vlm_scores": {
+      "geometry": 1.6,
+      "texture": 1.4,
+      "material": 2.0,
+      "plausibility": 2.4,
+      "artifacts": 3.6,
+      "preference": 2.2
+    },
+    "human_scores": {
+      "geometry": 2.857142857142857,
+      "texture": 1.5714285714285714,
+      "material": 1.5,
+      "plausibility": 2.142857142857143,
+      "artifacts": 3.642857142857143,
+      "preference": 1.9285714285714286
+    },
+    "cells": [
+      {
+        "row": 5,
+        "column": 4,
+        "criterion": "artifacts",
+        "cell_glb_filename": "row05_artifacts_col04_4c2a8438b33c4f2f80b282dd9d759b46.glb"
+      }
+    ]
+  },
+  {
+    "objaverse_index": "000-096/58ca59e3404f41f8981a90c0c8257ddd.glb",
+    "dictionary_index": "000-096",
+    "object_index": "58ca59e3404f41f8981a90c0c8257ddd.glb",
+    "object_uid": "58ca59e3404f41f8981a90c0c8257ddd",
+    "gobjaverse_index": "96/491732",
+    "category_label": "Transportations",
+    "caption": "Futuristic hexagonal-shaped module with dual cylindrical protrusions, featuring recessed panels, industrial details, and illuminated accents in shades of gray, olive, and cyan.",
+    "vlm_scores": {
+      "geometry": 4.0,
+      "texture": 4.4,
+      "material": 4.0,
+      "plausibility": 3.6,
+      "artifacts": 4.2,
+      "preference": 5.0
+    },
+    "human_scores": {
+      "geometry": 4.214285714285714,
+      "texture": 4.357142857142857,
+      "material": 4.642857142857143,
+      "plausibility": 3.4285714285714284,
+      "artifacts": 3.7857142857142856,
+      "preference": 3.5
+    },
+    "cells": [
+      {
+        "row": 2,
+        "column": 2,
+        "criterion": "texture",
+        "cell_glb_filename": "row02_texture_col02_58ca59e3404f41f8981a90c0c8257ddd.glb"
+      }
+    ]
+  },
+  {
+    "objaverse_index": "000-143/67f185a2e7984a8494b4d8cfdfe46c5f.glb",
+    "dictionary_index": "000-143",
+    "object_index": "67f185a2e7984a8494b4d8cfdfe46c5f.glb",
+    "object_uid": "67f185a2e7984a8494b4d8cfdfe46c5f",
+    "gobjaverse_index": "143/726957",
+    "category_label": "Animals",
+    "caption": "Monochromatic, stylized dragon with geometric detailing and fragmented wings.",
+    "vlm_scores": {
+      "geometry": 2.4,
+      "texture": 1.0,
+      "material": 2.4,
+      "plausibility": 1.8,
+      "artifacts": 3.0,
+      "preference": 1.2
+    },
+    "human_scores": {
+      "geometry": 3.5,
+      "texture": 1.0,
+      "material": 1.3571428571428572,
+      "plausibility": 2.2857142857142856,
+      "artifacts": 3.2142857142857144,
+      "preference": 1.9285714285714286
+    },
+    "cells": [
+      {
+        "row": 2,
+        "column": 5,
+        "criterion": "texture",
+        "cell_glb_filename": "row02_texture_col05_67f185a2e7984a8494b4d8cfdfe46c5f.glb"
+      }
+    ]
+  },
+  {
+    "objaverse_index": "000-142/7579dc78e87248338992efb62bc953f1.glb",
+    "dictionary_index": "000-142",
+    "object_index": "7579dc78e87248338992efb62bc953f1.glb",
+    "object_uid": "7579dc78e87248338992efb62bc953f1",
+    "gobjaverse_index": "142/722277",
+    "category_label": "Transportations",
+    "caption": "White racing car model",
+    "vlm_scores": {
+      "geometry": 3.6,
+      "texture": 1.6,
+      "material": 2.0,
+      "plausibility": 3.2,
+      "artifacts": 3.4,
+      "preference": 2.2
+    },
+    "human_scores": {
+      "geometry": 4.0,
+      "texture": 1.1428571428571428,
+      "material": 1.3571428571428572,
+      "plausibility": 2.5714285714285716,
+      "artifacts": 3.4285714285714284,
+      "preference": 2.4285714285714284
+    },
+    "cells": [
+      {
+        "row": 5,
+        "column": 5,
+        "criterion": "artifacts",
+        "cell_glb_filename": "row05_artifacts_col05_7579dc78e87248338992efb62bc953f1.glb"
+      }
+    ]
+  },
+  {
+    "objaverse_index": "000-068/82853aa100d64d9d89f85367cf976212.glb",
+    "dictionary_index": "000-068",
+    "object_index": "82853aa100d64d9d89f85367cf976212.glb",
+    "object_uid": "82853aa100d64d9d89f85367cf976212",
+    "gobjaverse_index": "68/352575",
+    "category_label": "Transportations",
+    "caption": "a tan helicopter flying in the sky.",
+    "vlm_scores": {
+      "geometry": 3.6,
+      "texture": 4.6,
+      "material": 2.8,
+      "plausibility": 4.8,
+      "artifacts": 4.6,
+      "preference": 4.6
+    },
+    "human_scores": {
+      "geometry": 4.714285714285714,
+      "texture": 4.642857142857143,
+      "material": 1.6428571428571428,
+      "plausibility": 4.071428571428571,
+      "artifacts": 4.428571428571429,
+      "preference": 4.142857142857143
+    },
+    "cells": [
+      {
+        "row": 2,
+        "column": 1,
+        "criterion": "texture",
+        "cell_glb_filename": "row02_texture_col01_82853aa100d64d9d89f85367cf976212.glb"
+      }
+    ]
+  },
+  {
+    "objaverse_index": "000-051/8454de95163d47e9a3a9863c1c8d9db1.glb",
+    "dictionary_index": "000-051",
+    "object_index": "8454de95163d47e9a3a9863c1c8d9db1.glb",
+    "object_uid": "8454de95163d47e9a3a9863c1c8d9db1",
+    "gobjaverse_index": "51/267596",
+    "category_label": "Electronics",
+    "caption": "a green military ammo box with the words '200 cartridges' on it.",
+    "vlm_scores": {
+      "geometry": 2.8,
+      "texture": 4.2,
+      "material": 4.4,
+      "plausibility": 3.8,
+      "artifacts": 4.4,
+      "preference": 4.0
+    },
+    "human_scores": {
+      "geometry": 3.642857142857143,
+      "texture": 3.642857142857143,
+      "material": 4.214285714285714,
+      "plausibility": 3.7142857142857144,
+      "artifacts": 3.7142857142857144,
+      "preference": 3.2857142857142856
+    },
+    "cells": [
+      {
+        "row": 3,
+        "column": 1,
+        "criterion": "material",
+        "cell_glb_filename": "row03_material_col01_8454de95163d47e9a3a9863c1c8d9db1.glb"
+      }
+    ]
+  },
+  {
+    "objaverse_index": "000-104/91ccfcd171934ee2a8b7029a15a82cbb.glb",
+    "dictionary_index": "000-104",
+    "object_index": "91ccfcd171934ee2a8b7029a15a82cbb.glb",
+    "object_uid": "91ccfcd171934ee2a8b7029a15a82cbb",
+    "gobjaverse_index": "104/532836",
+    "category_label": "Furnitures",
+    "caption": "a green plastic chair with a white base and black armrest.",
+    "vlm_scores": {
+      "geometry": 3.4,
+      "texture": 2.8,
+      "material": 1.4,
+      "plausibility": 3.0,
+      "artifacts": 3.8,
+      "preference": 2.6
+    },
+    "human_scores": {
+      "geometry": 3.357142857142857,
+      "texture": 1.9285714285714286,
+      "material": 1.4285714285714286,
+      "plausibility": 2.5714285714285716,
+      "artifacts": 3.5714285714285716,
+      "preference": 2.357142857142857
+    },
+    "cells": [
+      {
+        "row": 3,
+        "column": 5,
+        "criterion": "material",
+        "cell_glb_filename": "row03_material_col05_91ccfcd171934ee2a8b7029a15a82cbb.glb"
+      }
+    ]
+  },
+  {
+    "objaverse_index": "000-044/933bb241a1674802bc62487ecc7fce22.glb",
+    "dictionary_index": "000-044",
+    "object_index": "933bb241a1674802bc62487ecc7fce22.glb",
+    "object_uid": "933bb241a1674802bc62487ecc7fce22",
+    "gobjaverse_index": "44/232903",
+    "category_label": "Furnitures",
+    "caption": "a pink chair with a curved backrest, a bow, and a cloth draped over it.",
+    "vlm_scores": {
+      "geometry": 4.6,
+      "texture": 2.2,
+      "material": 3.0,
+      "plausibility": 2.4,
+      "artifacts": 4.0,
+      "preference": 3.2
+    },
+    "human_scores": {
+      "geometry": 3.642857142857143,
+      "texture": 2.142857142857143,
+      "material": 1.4285714285714286,
+      "plausibility": 2.9285714285714284,
+      "artifacts": 3.857142857142857,
+      "preference": 2.857142857142857
+    },
+    "cells": [
+      {
+        "row": 2,
+        "column": 4,
+        "criterion": "texture",
+        "cell_glb_filename": "row02_texture_col04_933bb241a1674802bc62487ecc7fce22.glb"
+      }
+    ]
+  },
+  {
+    "objaverse_index": "000-127/9410440a48e647e49a90f4051777d3a9.glb",
+    "dictionary_index": "000-127",
+    "object_index": "9410440a48e647e49a90f4051777d3a9.glb",
+    "object_uid": "9410440a48e647e49a90f4051777d3a9",
+    "gobjaverse_index": "127/647847",
+    "category_label": "Daily-Used",
+    "caption": "a white shelf with plastic trim and molding.",
+    "vlm_scores": {
+      "geometry": 1.4,
+      "texture": 1.2,
+      "material": 1.0,
+      "plausibility": 1.0,
+      "artifacts": 3.4,
+      "preference": 1.6
+    },
+    "human_scores": {
+      "geometry": 1.9285714285714286,
+      "texture": 1.0,
+      "material": 1.3571428571428572,
+      "plausibility": 1.3571428571428572,
+      "artifacts": 3.0,
+      "preference": 1.4285714285714286
+    },
+    "cells": [
+      {
+        "row": 6,
+        "column": 5,
+        "criterion": "preference",
+        "cell_glb_filename": "row06_preference_col05_9410440a48e647e49a90f4051777d3a9.glb"
+      }
+    ]
+  },
+  {
+    "objaverse_index": "000-159/9eb2b87398c042849377f59b0b15db51.glb",
+    "dictionary_index": "000-159",
+    "object_index": "9eb2b87398c042849377f59b0b15db51.glb",
+    "object_uid": "9eb2b87398c042849377f59b0b15db51",
+    "gobjaverse_index": "159/807351",
+    "category_label": "Food",
+    "caption": "a tray with food, drink, and popcorn on a checkered table.",
+    "vlm_scores": {
+      "geometry": 1.2,
+      "texture": 4.0,
+      "material": 2.8,
+      "plausibility": 2.2,
+      "artifacts": 4.0,
+      "preference": 3.0
+    },
+    "human_scores": {
+      "geometry": 3.5,
+      "texture": 3.4285714285714284,
+      "material": 1.5,
+      "plausibility": 3.0714285714285716,
+      "artifacts": 3.5,
+      "preference": 2.9285714285714284
+    },
+    "cells": [
+      {
+        "row": 6,
+        "column": 3,
+        "criterion": "preference",
+        "cell_glb_filename": "row06_preference_col03_9eb2b87398c042849377f59b0b15db51.glb"
+      }
+    ]
+  },
+  {
+    "objaverse_index": "000-075/b3f0b047fd714ba79ce7f824e7569fb1.glb",
+    "dictionary_index": "000-075",
+    "object_index": "b3f0b047fd714ba79ce7f824e7569fb1.glb",
+    "object_uid": "b3f0b047fd714ba79ce7f824e7569fb1",
+    "gobjaverse_index": "75/404651",
+    "category_label": "Furniture",
+    "caption": "A green rectangular table with four legs.",
+    "vlm_scores": {
+      "geometry": 3.0,
+      "texture": 2.8,
+      "material": 1.8,
+      "plausibility": 2.4,
+      "artifacts": 3.8,
+      "preference": 2.4
+    },
+    "human_scores": {
+      "geometry": 2.9285714285714284,
+      "texture": 2.2142857142857144,
+      "material": 2.2142857142857144,
+      "plausibility": 2.5714285714285716,
+      "artifacts": 3.357142857142857,
+      "preference": 2.0714285714285716
+    },
+    "cells": [
+      {
+        "row": 3,
+        "column": 4,
+        "criterion": "material",
+        "cell_glb_filename": "row03_material_col04_b3f0b047fd714ba79ce7f824e7569fb1.glb"
+      }
+    ]
+  },
+  {
+    "objaverse_index": "000-011/b58eae605aec4809af4d4018bc1c5920.glb",
+    "dictionary_index": "000-011",
+    "object_index": "b58eae605aec4809af4d4018bc1c5920.glb",
+    "object_uid": "b58eae605aec4809af4d4018bc1c5920",
+    "gobjaverse_index": "11/68508",
+    "category_label": "Human-Shape",
+    "caption": "a person in blue armor with arms outstretched.",
+    "vlm_scores": {
+      "geometry": 4.2,
+      "texture": 1.6,
+      "material": 2.6,
+      "plausibility": 2.8,
+      "artifacts": 4.0,
+      "preference": 2.2
+    },
+    "human_scores": {
+      "geometry": 4.785714285714286,
+      "texture": 1.4285714285714286,
+      "material": 1.3571428571428572,
+      "plausibility": 2.7857142857142856,
+      "artifacts": 3.857142857142857,
+      "preference": 2.642857142857143
+    },
+    "cells": [
+      {
+        "row": 4,
+        "column": 4,
+        "criterion": "plausibility",
+        "cell_glb_filename": "row04_plausibility_col04_b58eae605aec4809af4d4018bc1c5920.glb"
+      }
+    ]
+  },
+  {
+    "objaverse_index": "000-155/bdbcd6b795514f2d9143d7c90c9813dd.glb",
+    "dictionary_index": "000-155",
+    "object_index": "bdbcd6b795514f2d9143d7c90c9813dd.glb",
+    "object_uid": "bdbcd6b795514f2d9143d7c90c9813dd",
+    "gobjaverse_index": "155/788706",
+    "category_label": "Buildings&&Outdoor",
+    "caption": "and gold sarcophagus with a white gold handle, sword, and cross, displayed on a white marble podium with gold trim.",
+    "vlm_scores": {
+      "geometry": 2.4,
+      "texture": 4.2,
+      "material": 4.0,
+      "plausibility": 3.6,
+      "artifacts": 4.0,
+      "preference": 3.4
+    },
+    "human_scores": {
+      "geometry": 4.285714285714286,
+      "texture": 4.142857142857143,
+      "material": 1.5,
+      "plausibility": 3.5714285714285716,
+      "artifacts": 4.071428571428571,
+      "preference": 3.357142857142857
+    },
+    "cells": [
+      {
+        "row": 4,
+        "column": 2,
+        "criterion": "plausibility",
+        "cell_glb_filename": "row04_plausibility_col02_bdbcd6b795514f2d9143d7c90c9813dd.glb"
+      },
+      {
+        "row": 5,
+        "column": 3,
+        "criterion": "artifacts",
+        "cell_glb_filename": "row05_artifacts_col03_bdbcd6b795514f2d9143d7c90c9813dd.glb"
+      }
+    ]
+  },
+  {
+    "objaverse_index": "000-113/c1966bbf8a0f41ef8dd215b4d79ef91a.glb",
+    "dictionary_index": "000-113",
+    "object_index": "c1966bbf8a0f41ef8dd215b4d79ef91a.glb",
+    "object_uid": "c1966bbf8a0f41ef8dd215b4d79ef91a",
+    "gobjaverse_index": "113/578766",
+    "category_label": "Poor-quality",
+    "caption": "a small wooden table with stairs and a white top.",
+    "vlm_scores": {
+      "geometry": 2.4,
+      "texture": 3.6,
+      "material": 2.8,
+      "plausibility": 3.4,
+      "artifacts": 3.8,
+      "preference": 3.0
+    },
+    "human_scores": {
+      "geometry": 4.0,
+      "texture": 4.0,
+      "material": 3.142857142857143,
+      "plausibility": 3.9285714285714284,
+      "artifacts": 4.071428571428571,
+      "preference": 3.7142857142857144
+    },
+    "cells": [
+      {
+        "row": 3,
+        "column": 3,
+        "criterion": "material",
+        "cell_glb_filename": "row03_material_col03_c1966bbf8a0f41ef8dd215b4d79ef91a.glb"
+      }
+    ]
+  },
+  {
+    "objaverse_index": "000-010/dcd8563eed2d42d09798991f93284809.glb",
+    "dictionary_index": "000-010",
+    "object_index": "dcd8563eed2d42d09798991f93284809.glb",
+    "object_uid": "dcd8563eed2d42d09798991f93284809",
+    "gobjaverse_index": "10/153993",
+    "category_label": "Furnitures",
+    "caption": "A white chair with simple curved arms and a sled base.",
+    "vlm_scores": {
+      "geometry": 4.8,
+      "texture": 5.0,
+      "material": 5.0,
+      "plausibility": 3.0,
+      "artifacts": 4.0,
+      "preference": 4.6
+    },
+    "human_scores": {
+      "geometry": 4.285714285714286,
+      "texture": 3.5714285714285716,
+      "material": 2.0,
+      "plausibility": 3.2142857142857144,
+      "artifacts": 4.428571428571429,
+      "preference": 3.357142857142857
+    },
+    "cells": [
+      {
+        "row": 4,
+        "column": 3,
+        "criterion": "plausibility",
+        "cell_glb_filename": "row04_plausibility_col03_dcd8563eed2d42d09798991f93284809.glb"
+      }
+    ]
+  },
+  {
+    "objaverse_index": "000-134/e29c73b064b54e8e918eb232afdba2e3.glb",
+    "dictionary_index": "000-134",
+    "object_index": "e29c73b064b54e8e918eb232afdba2e3.glb",
+    "object_uid": "e29c73b064b54e8e918eb232afdba2e3",
+    "gobjaverse_index": "134/684392",
+    "category_label": "Poor-quality",
+    "caption": "a girl in a pink dress holding a sword and a bow and arrow.",
+    "vlm_scores": {
+      "geometry": 4.4,
+      "texture": 5.0,
+      "material": 4.6,
+      "plausibility": 4.0,
+      "artifacts": 4.2,
+      "preference": 5.0
+    },
+    "human_scores": {
+      "geometry": 4.428571428571429,
+      "texture": 4.285714285714286,
+      "material": 3.9285714285714284,
+      "plausibility": 4.357142857142857,
+      "artifacts": 4.214285714285714,
+      "preference": 4.428571428571429
+    },
+    "cells": [
+      {
+        "row": 1,
+        "column": 1,
+        "criterion": "geometry",
+        "cell_glb_filename": "row01_geometry_col01_e29c73b064b54e8e918eb232afdba2e3.glb"
+      }
+    ]
+  },
+  {
+    "objaverse_index": "000-050/e6169f3f5d0e43c0ba3a0a4b54f191dd.glb",
+    "dictionary_index": "000-050",
+    "object_index": "e6169f3f5d0e43c0ba3a0a4b54f191dd.glb",
+    "object_uid": "e6169f3f5d0e43c0ba3a0a4b54f191dd",
+    "gobjaverse_index": "50/264467",
+    "category_label": "Plants",
+    "caption": "a marijuana plant in a wooden pot",
+    "vlm_scores": {
+      "geometry": 3.4,
+      "texture": 4.8,
+      "material": 4.0,
+      "plausibility": 4.2,
+      "artifacts": 4.4,
+      "preference": 4.8
+    },
+    "human_scores": {
+      "geometry": 4.857142857142857,
+      "texture": 4.428571428571429,
+      "material": 3.5,
+      "plausibility": 4.714285714285714,
+      "artifacts": 4.428571428571429,
+      "preference": 4.571428571428571
+    },
+    "cells": [
+      {
+        "row": 5,
+        "column": 1,
+        "criterion": "artifacts",
+        "cell_glb_filename": "row05_artifacts_col01_e6169f3f5d0e43c0ba3a0a4b54f191dd.glb"
+      }
+    ]
+  },
+  {
+    "objaverse_index": "000-108/f2730dc7ef804082893d6e5254b9d5ad.glb",
+    "dictionary_index": "000-108",
+    "object_index": "f2730dc7ef804082893d6e5254b9d5ad.glb",
+    "object_uid": "f2730dc7ef804082893d6e5254b9d5ad",
+    "gobjaverse_index": "108/554714",
+    "category_label": "Human-Shape",
+    "caption": "Princess Peach",
+    "vlm_scores": {
+      "geometry": 4.2,
+      "texture": 4.6,
+      "material": 3.2,
+      "plausibility": 4.2,
+      "artifacts": 4.6,
+      "preference": 4.6
+    },
+    "human_scores": {
+      "geometry": 4.571428571428571,
+      "texture": 4.071428571428571,
+      "material": 4.571428571428571,
+      "plausibility": 4.142857142857143,
+      "artifacts": 4.285714285714286,
+      "preference": 4.428571428571429
+    },
+    "cells": [
+      {
+        "row": 6,
+        "column": 1,
+        "criterion": "preference",
+        "cell_glb_filename": "row06_preference_col01_f2730dc7ef804082893d6e5254b9d5ad.glb"
+      }
+    ]
+  },
+  {
+    "objaverse_index": "000-138/fe30c40ab1c540e4bf7df070677c9ed0.glb",
+    "dictionary_index": "000-138",
+    "object_index": "fe30c40ab1c540e4bf7df070677c9ed0.glb",
+    "object_uid": "fe30c40ab1c540e4bf7df070677c9ed0",
+    "gobjaverse_index": "138/704965",
+    "category_label": "Poor-quality",
+    "caption": "a damaged room featuring a torn-up kitchen, broken roof, destroyed desk, and damaged plane.",
+    "vlm_scores": {
+      "geometry": 2.4,
+      "texture": 5.0,
+      "material": 5.0,
+      "plausibility": 2.0,
+      "artifacts": 2.4,
+      "preference": 1.2
+    },
+    "human_scores": {
+      "geometry": 2.4285714285714284,
+      "texture": 3.4285714285714284,
+      "material": 1.2857142857142858,
+      "plausibility": 1.9285714285714286,
+      "artifacts": 1.3571428571428572,
+      "preference": 1.5714285714285714
+    },
+    "cells": [
+      {
+        "row": 1,
+        "column": 4,
+        "criterion": "geometry",
+        "cell_glb_filename": "row01_geometry_col04_fe30c40ab1c540e4bf7df070677c9ed0.glb"
+      }
+    ]
+  }
+]
