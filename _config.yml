@@ -3,17 +3,17 @@
 # -----------------------------------------------------------------------------
 
 title: blank # the website title (if blank, full name will be used instead)
-first_name: Jihyun
+first_name: JiHyuk
 middle_name:
 last_name: Byun
 contact_note: >
   Feel free to reach out via email.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Personal academic website of Jihyun Byun.
+  Personal academic website of JiHyuk Byun.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-keywords: jihyun byun, academic, research, computer science
+keywords: jihyuk byun, academic, research, computer science
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: 🎓 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
