@@ -1,0 +1,88 @@
+name: Deploy blog
+
+# Builds the al-folio Jekyll project and publishes ONLY the /blog subtree onto
+# the gh-pages branch. The rest of gh-pages (the hand-written static site at /,
+# /publications/, /projects/, /cv/, ...) is left untouched.
+
+on:
+  push:
+    branches:
+      - blog-source
+    paths:
+      - "_posts/**"
+      - "_pages/blog.md"
+      - "_includes/**"
+      - "_layouts/**"
+      - "_sass/**"
+      - "_config.yml"
+      - "Gemfile"
+      - "Gemfile.lock"
+      - "assets/**"
+      - ".github/workflows/deploy-blog.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Avoid overlapping deploys racing on the gh-pages branch.
+concurrency:
+  group: deploy-blog
+  cancel-in-progress: false
+
+jobs:
+  deploy-blog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby 💎
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3.5"
+          bundler-cache: true
+
+      - name: Setup Python 🐍
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: "pip"
+
+      - name: Install build deps 🔧
+        run: |
+          sudo apt-get update && sudo apt-get install -y imagemagick
+          pip3 install --upgrade nbconvert
+
+      - name: Build site 🏗️
+        run: |
+          export JEKYLL_ENV=production
+          bundle exec jekyll build
+
+      - name: Deploy /blog to gh-pages 🚀
+        if: github.event_name != 'pull_request'
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          # publish only the built blog subtree...
+          folder: _site/blog
+          # ...into the /blog folder of gh-pages. `clean` is scoped to this
+          # target folder, so root files of the static site are preserved.
+          target-folder: blog
+          clean: true
+          commit-message: "Deploy blog (${{ github.sha }})"
+
+      - name: Deploy blog images to gh-pages 🖼️
+        if: github.event_name != 'pull_request'
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          # Post figures live under /assets/img and are referenced by absolute
+          # path. Add them WITHOUT cleaning, so the static site's own images
+          # (profile.png, publication_teasers/*, ... — not present in this
+          # build) are preserved. Shared al-folio sample images are simply
+          # overwritten with identical copies. CSS/JS are NOT touched (they
+          # already exist on gh-pages and stay authoritative for the main site).
+          folder: _site/assets/img
+          target-folder: assets/img
+          clean: false
+          commit-message: "Deploy blog images (${{ github.sha }})"

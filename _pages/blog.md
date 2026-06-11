@@ -7,7 +7,7 @@ nav_order: 1
 pagination:
   enabled: true
   collection: posts
-  permalink: /page/:num/
+  permalink: /blog/page/:num/ # keep pagination under /blog so only the _site/blog subtree needs deploying
   per_page: 5
   sort_field: date
   sort_reverse: true
