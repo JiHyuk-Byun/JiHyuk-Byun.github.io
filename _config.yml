@@ -93,6 +93,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 blog_name: # leave blank to hide the header banner on the blog listing page
 blog_description: # leave blank to hide the header banner on the blog listing page
 permalink: /blog/:year/:title/
+future: true # build posts dated "today" even when the CI runner's UTC clock is still yesterday
 lsi: false # produce an index for related posts
 
 # Pagination
