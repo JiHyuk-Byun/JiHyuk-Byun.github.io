@@ -10,13 +10,11 @@
 >
 
 <!-- Bootstrap & MDB -->
-<link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | relative_url | bust_file_cache }}">
-<link
-  rel="stylesheet"
-  href="{{ site.third_party_libraries.mdb.url.css }}"
-  integrity="{{ site.third_party_libraries.mdb.integrity.css }}"
-  crossorigin="anonymous"
->
+<!-- Use the SAME local CSS as the hand-written static site so the blog's navbar
+     and design stay visually consistent with the rest of the site (the static
+     pages load /assets/css/mdb.min.css locally, not the al-folio CDN version). -->
+<link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/mdb.min.css' | relative_url }}">
 
 {% if page.pretty_table %}
   <!-- Bootstrap Table -->
@@ -75,6 +73,9 @@
   <link rel="shortcut icon" href="{{ site.icon | prepend: '/assets/img/' | relative_url | bust_file_cache}}">
 {% endif %}
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url | bust_css_cache }}">
+<!-- Same site-wide overrides the static pages use (container width, navbar
+     font/active color, post-title sizing) — keeps the blog visually unified. -->
+<link rel="stylesheet" href="{{ '/assets/css/profile.css' | relative_url }}">
 <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
 
 {% if site.enable_darkmode %}
