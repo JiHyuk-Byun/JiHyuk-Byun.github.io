@@ -111,6 +111,8 @@ pagination:
 
     {% for post in postlist %}
 
+    {% if post.hidden %}{% continue %}{% endif %}{% comment %} hidden drafts: built + reachable by URL, but kept out of the index {% endcomment %}
+
     {% if post.external_source == blank %}
       {% assign read_time = post.content | number_of_words | divided_by: 180 | plus: 1 %}
     {% else %}

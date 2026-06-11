@@ -1,5 +1,6 @@
 {% assign have_related_posts = false %}
 {% for post in site.related_posts | limit: site.related_blog_posts.max_related %}
+  {% if post.hidden %}{% continue %}{% endif %}{% comment %} don't surface hidden drafts {% endcomment %}
   {% unless have_related_posts %}
     {% assign have_related_posts = true %}
     {% if page.layout == 'post' %}

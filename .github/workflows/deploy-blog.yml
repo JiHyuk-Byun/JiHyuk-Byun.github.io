@@ -57,6 +57,8 @@ jobs:
         run: |
           export JEKYLL_ENV=production
           bundle exec jekyll build
+          # ensure the additive-deploy folders always exist (empty -> no-op deploy)
+          mkdir -p _site/assets/img _site/assets/code
 
       - name: Deploy /blog to gh-pages 🚀
         if: github.event_name != 'pull_request'
@@ -86,3 +88,16 @@ jobs:
           target-folder: assets/img
           clean: false
           commit-message: "Deploy blog images (${{ github.sha }})"
+
+      - name: Deploy blog code files to gh-pages 📎
+        if: github.event_name != 'pull_request'
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          # Uploaded experiment code (assets/code/posts/<slug>/...) referenced by
+          # download links in posts. Additive, like images: never clean, so nothing
+          # else on gh-pages is touched.
+          folder: _site/assets/code
+          target-folder: assets/code
+          clean: false
+          commit-message: "Deploy blog code files (${{ github.sha }})"
