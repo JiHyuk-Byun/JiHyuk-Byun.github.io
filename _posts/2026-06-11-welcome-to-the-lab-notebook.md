@@ -8,6 +8,7 @@ categories: [meta]
 toc:
   beginning: true
 related_posts: false
+published: false # kept as a reference/template; not built or shown on the blog. Set to true (or remove) to publish.
 ---
 
 This blog is my lab notebook. Whenever I have an idea or a toy I want to
