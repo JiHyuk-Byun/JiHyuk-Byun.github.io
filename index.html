@@ -107,7 +107,7 @@
           </ul>
 
           <h2 class="section-heading"><a href="/blog/" style="color: inherit">Blog</a></h2>
-          <ul class="friendly-list">
+          <ul class="friendly-list" id="blog-recent">
             <li>
               <a href="/blog/2026/inducing-grokking-on-natural-image-data/">Inducing grokking on natural (image) data</a>
               <span class="sub">Jun 2026</span>
@@ -118,6 +118,29 @@
             </li>
           </ul>
           <p><a href="/blog/">All posts &rarr;</a></p>
+          <script>
+            (function () {
+              fetch("/blog/recent-posts.json")
+                .then(function (r) { return r.json(); })
+                .then(function (posts) {
+                  var ul = document.getElementById("blog-recent");
+                  if (!ul || !posts.length) return;
+                  ul.innerHTML = "";
+                  posts.slice(0, 3).forEach(function (p) {
+                    var li = document.createElement("li");
+                    var a = document.createElement("a");
+                    a.href = p.url; a.textContent = p.title;
+                    var s = document.createElement("span");
+                    s.className = "sub"; s.textContent = p.date;
+                    li.appendChild(a);
+                    li.appendChild(document.createTextNode(" "));
+                    li.appendChild(s);
+                    ul.appendChild(li);
+                  });
+                })
+                .catch(function () {});
+            })();
+          </script>
 
           <h2 class="section-heading"><a href="/publications/" style="color: inherit">Publications</a></h2>
           <div class="publications">
