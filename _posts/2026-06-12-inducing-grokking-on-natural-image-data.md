@@ -75,8 +75,8 @@ date: 2026-06-12
 - **Architecture is not decisive** either — MLP and CNN both grok; the CNN's bias only **narrows
   the delay**.
 - **Weight decay** traverses the trap once it exists.
-- **One line:** *grokking = gap (intrinsic, or manufactured by MSE **and** large init) × push
-  (weight decay) × regime (overtrain on small fixed data).*
+- **One line:** *grokking = gap (intrinsic, or manufactured — in our case by a pinning loss like
+  MSE **plus** large init) × push (weight decay) × regime (overtrain on small fixed data).*
 
 ## Code
 <a href="/assets/code/posts/inducing-grokking-on-natural-image-data/ablation.ipynb" download><code>ablation.ipynb</code></a>
