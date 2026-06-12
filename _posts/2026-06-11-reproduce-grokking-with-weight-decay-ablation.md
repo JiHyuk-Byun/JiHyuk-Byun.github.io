@@ -68,7 +68,7 @@ date: 2026-06-11
   **"Inducing grokking on natural (image) data."**
 
 ## Code
-[`run.ipynb`](/assets/code/posts/reproduce-grokking-with-weight-decay-ablation/run.ipynb)
+<a href="/assets/code/posts/reproduce-grokking-with-weight-decay-ablation/run.ipynb" download><code>run.ipynb</code></a>
 
 ## References
 - Power et al. *Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets.* 2022. arXiv:2201.02177.

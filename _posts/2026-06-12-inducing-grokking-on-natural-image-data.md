@@ -78,7 +78,7 @@ date: 2026-06-12
   (weight decay) × regime (overtrain on small fixed data).*
 
 ## Code
-[`ablation.ipynb`](/assets/code/posts/inducing-grokking-on-natural-image-data/ablation.ipynb)
+<a href="/assets/code/posts/inducing-grokking-on-natural-image-data/ablation.ipynb" download><code>ablation.ipynb</code></a>
 
 ## References
 - Liu, Michaud, Tegmark. *Omnigrok: Grokking Beyond Algorithmic Data.* ICLR 2023. arXiv:2210.01117.
