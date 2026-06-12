@@ -68,7 +68,8 @@ date: 2026-06-12
   *compositional* sub-tasks; vanilla pretraining (huge data, ~1 epoch) lacks condition 2.
 
 ## Takeaway
-- The knob that *makes* grokking on gap-less data is the **loss**: **MSE traps, CE doesn't**.
+- **Unexpectedly, the loss mattered more than architecture or init scale** for whether grokking
+  appears on gap-less data: **MSE traps, CE doesn't**.
 - **Init scale is not independently decisive** — it deepens the trap *only under MSE* (under CE,
   scaling init barely moves anything: no collapse).
 - **Architecture is not decisive** either — MLP and CNN both grok; the CNN's bias only **narrows
