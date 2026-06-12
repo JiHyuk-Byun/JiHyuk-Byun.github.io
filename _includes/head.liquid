@@ -97,6 +97,28 @@
   body > [role="main"] {
     flex: 1 0 auto;
   }
+
+  /* The blog loads the static site's CSS (no al-folio table styles), so Markdown
+     tables in posts render as bare <table> with no borders. Style them here. */
+  .post .post-content table {
+    width: auto;
+    margin: 1.5rem 0;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  .post .post-content table th,
+  .post .post-content table td {
+    padding: 0.4rem 0.9rem;
+    text-align: left;
+    border-bottom: 1px solid var(--global-divider-color, #e8e8e8);
+  }
+  .post .post-content table thead th {
+    border-bottom: 2px solid var(--global-divider-color, #c8c8c8);
+    font-weight: 600;
+  }
+  .post .post-content table tbody tr:hover {
+    background: rgba(0, 0, 0, 0.025);
+  }
 </style>
 <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
 
