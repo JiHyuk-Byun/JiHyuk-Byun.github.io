@@ -81,8 +81,8 @@ date: 2026-06-12
 <a href="/assets/code/posts/inducing-grokking-on-natural-image-data/ablation.ipynb" download><code>ablation.ipynb</code></a>
 
 ## References
-- Liu, Michaud, Tegmark. *Omnigrok: Grokking Beyond Algorithmic Data.* ICLR 2023. arXiv:2210.01117.
-- Power et al. *Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets.* 2022. arXiv:2201.02177.
-- Hui, Belkin. *Evaluation of Neural Architectures Trained with Square Loss vs Cross-Entropy.* ICLR 2021. arXiv:2006.07322.
-- Soudry et al. *The Implicit Bias of Gradient Descent on Separable Data.* JMLR 2018. arXiv:1710.10345.
-- Wang et al. *Grokked Transformers are Implicit Reasoners.* 2024. arXiv:2405.15071.
+- Liu, Michaud, Tegmark. *Omnigrok: Grokking Beyond Algorithmic Data.* ICLR 2023. [arXiv:2210.01117](https://arxiv.org/abs/2210.01117).
+- Power et al. *Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets.* 2022. [arXiv:2201.02177](https://arxiv.org/abs/2201.02177).
+- Hui, Belkin. *Evaluation of Neural Architectures Trained with Square Loss vs Cross-Entropy.* ICLR 2021. [arXiv:2006.07322](https://arxiv.org/abs/2006.07322).
+- Soudry et al. *The Implicit Bias of Gradient Descent on Separable Data.* JMLR 2018. [arXiv:1710.10345](https://arxiv.org/abs/1710.10345).
+- Wang et al. *Grokked Transformers are Implicit Reasoners.* 2024. [arXiv:2405.15071](https://arxiv.org/abs/2405.15071).

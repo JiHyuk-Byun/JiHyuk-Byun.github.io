@@ -71,6 +71,6 @@ date: 2026-06-11
 <a href="/assets/code/posts/reproduce-grokking-with-weight-decay-ablation/run.ipynb" download><code>run.ipynb</code></a>
 
 ## References
-- Power et al. *Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets.* 2022. arXiv:2201.02177.
-- Nanda et al. *Progress Measures for Grokking via Mechanistic Interpretability.* ICLR 2023. arXiv:2301.05217.
-- Cohen et al. *Gradient Descent on Neural Networks Typically Occurs at the Edge of Stability.* ICLR 2021. arXiv:2103.00065.
+- Power et al. *Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets.* 2022. [arXiv:2201.02177](https://arxiv.org/abs/2201.02177).
+- Nanda et al. *Progress Measures for Grokking via Mechanistic Interpretability.* ICLR 2023. [arXiv:2301.05217](https://arxiv.org/abs/2301.05217).
+- Cohen et al. *Gradient Descent on Neural Networks Typically Occurs at the Edge of Stability.* ICLR 2021. [arXiv:2103.00065](https://arxiv.org/abs/2103.00065).
