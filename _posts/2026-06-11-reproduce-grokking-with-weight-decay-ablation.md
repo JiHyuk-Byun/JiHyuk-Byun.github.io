@@ -3,7 +3,7 @@ title: "Reproduce Grokking with Weight Decay Ablation"
 tags: [grokking, generalization, weight-decay]
 categories: [experiments]
 layout: post
-date: 2026-06-12
+date: 2026-06-11
 ---
 
 <!-- Rough notes. Run /blogify to publish. -->
