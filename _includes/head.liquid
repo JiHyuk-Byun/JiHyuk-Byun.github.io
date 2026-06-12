@@ -76,6 +76,15 @@
 <!-- Same site-wide overrides the static pages use (container width, navbar
      font/active color, post-title sizing) — keeps the blog visually unified. -->
 <link rel="stylesheet" href="{{ '/assets/css/profile.css' | relative_url }}">
+<style>
+  /* Keep post figures from spanning the full content width — cap and center
+     them so plots stay readable without dominating the page. */
+  .post .post-content figure {
+    max-width: 38rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
 <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
 
 {% if site.enable_darkmode %}
