@@ -11,6 +11,7 @@ on:
     paths:
       - "_posts/**"
       - "_pages/blog.md"
+      - "recent-posts.json"
       - "_includes/**"
       - "_layouts/**"
       - "_sass/**"
