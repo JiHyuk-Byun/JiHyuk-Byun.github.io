@@ -67,37 +67,39 @@
 </ul>
 <h2>3. 종합 의견</h2>
 <p><em>문장 끝 괄호는 그 판단의 근거가 된 실험입니다.</em></p>
+<h3>강점 (모델별)</h3>
+<p><strong>Document Parse</strong></p>
 <ul>
-<li>
-<p><strong>강점 (모델별)</strong>
-    <strong>Document Parse</strong></p>
-<ul>
-<li>병합(rowspan/colspan)까지 보존한 <strong>표 구조화가 거의 완벽</strong>하고, 요소 <strong>검출(localization)도 정확</strong>합니다. (Model Test 1 · In-the-wild 1)
-<strong>Information Extract</strong></li>
-<li>학습 없이 <strong>스키마만으로 이질 문서를 zero-shot 추출</strong>하고, <strong>틀린 스키마에도 환각하지 않습니다</strong>. (Model Test 2)</li>
-<li>특히 <strong><code>enhanced</code> 모드의 손글씨 추출이 매우 견고</strong>합니다. (In-the-wild 2)
-<strong>Solar-pro3</strong></li>
-<li>구조화된 표가 주어지면 <strong>수치 인용이 100% 정확</strong>(grounding)합니다. (In-the-wild 1)</li>
-<li><em>(공통)</em> 세 모델 모두 <strong>환각에 보수적</strong>입니다. (Model Test 2 · In-the-wild 1)</li>
+<li>병합(rowspan/colspan)까지 보존한 <strong>표 구조화가 거의 완벽</strong>하고, 요소 <strong>검출(localization)도 정확</strong>합니다. (Model Test 1 · In-the-wild 1)</li>
 </ul>
-</li>
-<li>
-<p><strong>한계 (모델별)</strong>
-    <strong>Document Parse</strong></p>
+<p><strong>Information Extract</strong></p>
+<ul>
+<li>학습 없이 <strong>스키마만으로 이질 문서를 zero-shot 추출</strong>하고, <strong>틀린 스키마에도 환각하지 않습니다</strong>. (Model Test 2)</li>
+<li>특히 <strong><code>enhanced</code> 모드의 손글씨 추출이 매우 견고</strong>합니다. (In-the-wild 2)</li>
+</ul>
+<p><strong>Solar-pro3</strong></p>
+<ul>
+<li>구조화된 표가 주어지면 <strong>수치 인용이 100% 정확</strong>(grounding)합니다. (In-the-wild 1)</li>
+</ul>
+<p><em>(공통)</em> 세 모델 모두 <strong>환각에 보수적</strong>입니다. (Model Test 2 · In-the-wild 1)</p>
+<h3>한계 (모델별)</h3>
+<p><strong>Document Parse</strong></p>
 <ul>
 <li>차트의 <strong>visual hierarchy</strong>(계열·차트 종류·legend)를 복원하지 못해, 다중계열 차트를 단일 행(<code>item_01</code>)으로 뭉갭니다. (Model Test 1)</li>
 <li>그림(figure)은 <strong>검출만</strong> 하고 구조화하지 않습니다(이미지 placeholder + 내부 텍스트 OCR). (Model Test 1)</li>
-<li><strong>캡션 검출이 비일관적</strong>입니다(표 캡션은 잡지만 도식 캡션은 본문으로 분류). (Model Test 1)
-<strong>Information Extract</strong></li>
+<li><strong>캡션 검출이 비일관적</strong>입니다(표 캡션은 잡지만 도식 캡션은 본문으로 분류). (Model Test 1)</li>
+</ul>
+<p><strong>Information Extract</strong></p>
+<ul>
 <li>가려진/훼손된 필드를 <strong>지시가 없으면 그럴듯한 값으로 추측</strong>합니다(안 보이는 할부개월을 <code>0</code>으로). (Model Test 2)</li>
 <li>작은 한글·인접 필드에서 <strong>오독</strong>이 납니다(seat↔gate 스왑, 카드사명 오독). (Model Test 2 · In-the-wild 2)</li>
 <li><strong>단일 스키마 description</strong>으로는 다양한 마킹 스타일을 다 덮지 못합니다(보기에 직접 친 동그라미 미인식). (In-the-wild 2)</li>
-<li><code>temperature</code> 미지원으로 출력이 <strong>비결정적</strong>입니다. (Model Test 2)
-<strong>Solar-pro3</strong></li>
+<li><code>temperature</code> 미지원으로 출력이 <strong>비결정적</strong>입니다. (Model Test 2)</li>
+</ul>
+<p><strong>Solar-pro3</strong></p>
+<ul>
 <li>표 수치는 정확히 인용하지만, <strong>그 수치 위의 reasoning은 환각</strong>이 일부 있습니다(약점 오선정·근거 오인용·수치 의미 날조). (In-the-wild 1)</li>
 <li>같은 표·구절을 반복하는 등 <strong>verbosity</strong>가 있습니다. (In-the-wild 1)</li>
-</ul>
-</li>
 </ul>
 <blockquote>
 <p>Result는 관찰한 사실만, Finding은 제 분석·의견입니다. 
