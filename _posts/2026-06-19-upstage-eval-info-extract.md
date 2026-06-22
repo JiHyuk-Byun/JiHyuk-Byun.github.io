@@ -5,7 +5,6 @@ slug: upstage-eval-info-extract
 tags: [upstage, information-extraction]
 categories: [experiments]
 layout: post
-hidden: true
 ---
 
 > **Model Test 2 / Information Extract** — a controlled capability check.
