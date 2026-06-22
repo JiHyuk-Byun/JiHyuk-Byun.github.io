@@ -5,7 +5,6 @@ slug: upstage-eval-exam-grader
 tags: [upstage, information-extraction, ocr, in-the-wild, practical]
 categories: [experiments]
 layout: post
-hidden: true
 ---
 
 > **In-the-wild 2 / Information Extract × Solar-pro3** — an end-to-end document task.
