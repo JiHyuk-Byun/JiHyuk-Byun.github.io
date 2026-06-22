@@ -5,7 +5,6 @@ slug: upstage-eval-paper-review
 tags: [upstage, document-parse, solar, e2e, practical]
 categories: [experiments]
 layout: post
-hidden: true
 ---
 
 > **In-the-wild 1 / Document Parse × Solar-pro3** — an end-to-end document task.
