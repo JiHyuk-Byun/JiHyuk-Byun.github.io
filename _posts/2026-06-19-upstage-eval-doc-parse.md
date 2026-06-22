@@ -5,7 +5,6 @@ slug: upstage-eval-doc-parse
 tags: [upstage, document-ai, figure, chart]
 categories: [experiments]
 layout: post
-hidden: true
 ---
 
 > **Model Test 1 / Document Parse** — a controlled capability check.
