@@ -1,6 +1,6 @@
 ---
 title: "Upstage Products Evaluation — Model Test 1: Document Parse"
-date: 2026-06-19
+date: 2026-06-19 16:00:00
 slug: upstage-eval-doc-parse
 tags: [upstage, document-ai, figure, chart]
 categories: [experiments]

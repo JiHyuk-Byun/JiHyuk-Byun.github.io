@@ -1,6 +1,6 @@
 ---
 title: "Upstage Products Evaluation — Model Test 2: Information Extract"
-date: 2026-06-19
+date: 2026-06-19 15:00:00
 slug: upstage-eval-info-extract
 tags: [upstage, information-extraction]
 categories: [experiments]
