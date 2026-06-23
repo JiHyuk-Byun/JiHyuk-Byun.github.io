@@ -1,4 +1,54 @@
 {% if paginator.total_pages > 1 %}
+  {%- comment -%}
+    Self-contained pagination styling. The blog is deployed onto gh-pages as the
+    /blog subtree only; the shared CSS on gh-pages is built from the main static
+    site (which has no pagination) and has the Bootstrap `.pagination` rules
+    purged. These scoped styles make the control render correctly regardless of
+    which CSS is present, and match Bootstrap when it is.
+  {%- endcomment -%}
+  <style>
+    nav[aria-label="Blog page navigation"] .pagination {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-left: 0;
+      list-style: none;
+    }
+    nav[aria-label="Blog page navigation"] .page-item .page-link {
+      position: relative;
+      display: block;
+      padding: 0.75rem 1.15rem;
+      margin-left: -1px;
+      line-height: 1.25;
+      color: var(--global-text-color);
+      background-color: var(--global-bg-color, #fff);
+      border: 1px solid var(--global-divider-color, #dee2e6);
+      text-decoration: none;
+    }
+    nav[aria-label="Blog page navigation"] .page-item:first-child .page-link {
+      margin-left: 0;
+      border-top-left-radius: 0.25rem;
+      border-bottom-left-radius: 0.25rem;
+    }
+    nav[aria-label="Blog page navigation"] .page-item:last-child .page-link {
+      border-top-right-radius: 0.25rem;
+      border-bottom-right-radius: 0.25rem;
+    }
+    nav[aria-label="Blog page navigation"] .page-item .page-link:hover {
+      color: #000;
+      background-color: var(--global-hover-color, #e9ecef);
+    }
+    nav[aria-label="Blog page navigation"] .page-item.active .page-link {
+      color: #fff;
+      background-color: var(--global-theme-color);
+      border-color: var(--global-theme-color);
+    }
+    nav[aria-label="Blog page navigation"] .page-item.disabled .page-link {
+      color: var(--global-text-color-light, #6c757d);
+      pointer-events: none;
+      background-color: var(--global-bg-color, #fff);
+    }
+  </style>
   <nav aria-label="Blog page navigation">
     <ul class="pagination pagination-lg justify-content-center">
       <li class="page-item {% unless paginator.previous_page %}disabled{% endunless %}">
