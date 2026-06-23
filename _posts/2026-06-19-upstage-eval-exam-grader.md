@@ -1,6 +1,6 @@
 ---
 title: "Upstage Products Evaluation — In-the-wild 2: Exam Auto-grader (Information Extract × Solar-pro3)"
-date: 2026-06-19 13:00:00
+date: 2026-06-19 16:00:00
 slug: upstage-eval-exam-grader
 tags: [upstage, information-extraction, ocr, in-the-wild, practical]
 categories: [experiments]
