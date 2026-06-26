@@ -1,10 +1,11 @@
 ---
 title: "Upstage Products Evaluation — In-the-wild 1: Paper Review (Document Parse × Solar-pro3)"
-date: 2026-06-19 15:00:00
+date: 2026-06-19
 slug: upstage-eval-paper-review
 tags: [upstage, document-parse, solar, e2e, practical]
 categories: [experiments]
 layout: post
+hidden: true
 ---
 
 > **In-the-wild 1 / Document Parse × Solar-pro3** — an end-to-end document task.
