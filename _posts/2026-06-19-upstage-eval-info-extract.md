@@ -1,10 +1,11 @@
 ---
 title: "Upstage Products Evaluation — Model Test 2: Information Extract"
-date: 2026-06-19 14:00:00
+date: 2026-06-19
 slug: upstage-eval-info-extract
 tags: [upstage, information-extraction]
 categories: [experiments]
 layout: post
+hidden: true
 ---
 
 > **Model Test 2 / Information Extract** — a controlled capability check.
