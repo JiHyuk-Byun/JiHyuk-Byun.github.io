@@ -7,17 +7,21 @@ layout: post
 hidden: true
 ---
 
-## Question — is *seeing the GUI* the bottleneck, not reasoning?
+## Question — is a text-rendered MDP the easier modality for an LLM?
 
-- Modern LLMs are strong at math/code reasoning but still weak as **web/GUI agents**.
-- Hypothesis: the blocker isn't reasoning — it's **visual understanding of the GUI**.
-- Clean test: give the **same model** the *same* tasks, but hand it the environment as
-  **structured text** (bypassing pixels) vs as **screenshots**, and measure the gap.
+- **[Webstep](https://jiwanchung.github.io/webstep/)** models each web app as a deterministic
+  **MDP**: a state, a fixed
+  action set, and pure transitions — the GUI is just *one rendering* of that underlying MDP.
+- Once the GUI and the MDP are **decoupled**, we can render the *same* MDP two ways: as **pixels**
+  (the screenshot a person sees) or as **structured text** (the state + the available actions).
+- The information content is identical — only the modality differs. So the question:
+  **is the text-rendered MDP actually the *easier* modality for the LLM?** That is, is *seeing the
+  GUI* the real bottleneck for web agents, rather than the task reasoning?
 
 ## Setup
 
 - **Model:** `Qwen3.5-9B` (unified multimodal), one vLLM server, **greedy** decoding (temp 0).
-- **Benchmark:** Webbench — deterministic MDP web tasks, **10 sites, 220 tasks**. Both conditions
+- **Benchmark:** Webstep — deterministic MDP web tasks, **10 sites, 220 tasks**. Both conditions
   run the *identical* task set (fixed seed), same 3-step memory window, same per-episode cap.
 - **text-MDP condition:** observation = the site's `observe()` output serialized to text
   (visibility-filtered → **the same information the screen shows**); actions = semantic
