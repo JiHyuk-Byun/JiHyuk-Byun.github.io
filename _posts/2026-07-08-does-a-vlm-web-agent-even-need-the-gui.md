@@ -4,7 +4,6 @@ date: 2026-07-08
 tags: [web-agents, multimodal, evaluation, grounding]
 categories: [experiments]
 layout: post
-hidden: true
 ---
 
 ## Question — does a web agent even need the (human-facing) GUI?
