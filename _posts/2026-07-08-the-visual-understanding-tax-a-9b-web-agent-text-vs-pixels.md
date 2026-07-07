@@ -7,16 +7,19 @@ layout: post
 hidden: true
 ---
 
-## Question — is a text-rendered MDP the easier modality for an LLM?
+## Question — does a web agent even need the (human-facing) GUI?
 
-- **[Webstep](https://jiwanchung.github.io/webstep/)** models each web app as a deterministic
-  **MDP**: a state, a fixed
-  action set, and pure transitions — the GUI is just *one rendering* of that underlying MDP.
-- Once the GUI and the MDP are **decoupled**, we can render the *same* MDP two ways: as **pixels**
-  (the screenshot a person sees) or as **structured text** (the state + the available actions).
-- The information content is identical — only the modality differs. So the question:
-  **is the text-rendered MDP actually the *easier* modality for the LLM?** That is, is *seeing the
-  GUI* the real bottleneck for web agents, rather than the task reasoning?
+- A GUI is designed for **humans**. But a web agent is an **LLM** — so is the GUI the right
+  interface for it, or just an accident of the app having been built for people?
+- **[Webstep](https://jiwanchung.github.io/webstep/)** lets us ask this cleanly: it models each web
+  app as a deterministic **MDP** (state, fixed action set, pure transitions), where the GUI is only
+  *one rendering* of that MDP.
+- Decouple the GUI from the MDP and you can render the *same* MDP two ways — a **human-friendly GUI**
+  (pixels) or an **LLM-friendly text UI** (state + available actions). Same information, only the
+  modality differs.
+- **Main question:** what is the **tax** an LLM pays for going through the human GUI instead of a
+  text-only UI? Equivalently — is web-agent performance bottlenecked by **reading the GUI**, not by
+  the task reasoning?
 
 ## Setup
 
@@ -71,9 +74,10 @@ hidden: true
 
 ## Takeaway
 
-- **In web-agent tasks, the bottleneck is visual GUI understanding, not task reasoning.** Handing
-  a 9B the *same* tasks as text instead of pixels **~doubles** success (28% → 68%). What's left of
-  the text agent's failures is **multi-turn execution** (looping), not perception.
+- **A web agent pays a large tax for the human-facing GUI.** Rendering the *same* MDP as an
+  LLM-friendly **text UI** instead of pixels **~doubles** a 9B's success (28% → 68%, **+40pp**) —
+  the bottleneck is **reading the GUI, not the task reasoning.** What's left of the text agent's
+  failures is **multi-turn execution** (looping), possibly just a 9B capability limit.
 
 ## Code
 
