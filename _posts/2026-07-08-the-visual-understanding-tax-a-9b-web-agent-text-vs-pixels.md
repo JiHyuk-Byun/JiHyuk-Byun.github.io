@@ -9,15 +9,15 @@ hidden: true
 
 ## Question — does a web agent even need the (human-facing) GUI?
 
-- A GUI is designed for **humans**. But a web agent is an **LLM** — so is the GUI the right
-  interface for it, or just an accident of the app having been built for people?
+- A GUI is designed for **humans**. But a web agent is a **VLM** — it *can* see, yet is the GUI
+  the right interface for it, or just an accident of the app having been built for people?
 - **[Webstep](https://jiwanchung.github.io/webstep/)** lets us ask this cleanly: it models each web
   app as a deterministic **MDP** (state, fixed action set, pure transitions), where the GUI is only
   *one rendering* of that MDP.
 - Decouple the GUI from the MDP and you can render the *same* MDP two ways — a **human-friendly GUI**
-  (pixels) or an **LLM-friendly text UI** (state + available actions). Same information, only the
+  (pixels) or a **VLM-friendly text UI** (state + available actions). Same information, only the
   modality differs.
-- **Main question:** what is the **tax** an LLM pays for going through the human GUI instead of a
+- **Main question:** what is the **tax** a VLM pays for going through the human GUI instead of a
   text-only UI? Equivalently — is web-agent performance bottlenecked by **reading the GUI**, not by
   the task reasoning?
 
@@ -75,7 +75,7 @@ hidden: true
 ## Takeaway
 
 - **A web agent pays a large tax for the human-facing GUI.** Rendering the *same* MDP as an
-  LLM-friendly **text UI** instead of pixels **~doubles** a 9B's success (28% → 68%, **+40pp**) —
+  VLM-friendly **text UI** instead of pixels **~doubles** a 9B's success (28% → 68%, **+40pp**) —
   the bottleneck is **reading the GUI, not the task reasoning.** What's left of the text agent's
   failures is **multi-turn execution** (looping), possibly just a 9B capability limit.
 
