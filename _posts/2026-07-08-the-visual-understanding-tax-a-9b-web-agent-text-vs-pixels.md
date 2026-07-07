@@ -36,15 +36,15 @@ hidden: true
 - **Main finding:** in these web-agent tasks the bottleneck is **understanding the GUI visually,
   more than task reasoning** — remove the visual channel and success **~doubles**.
 
-## Result 2 — text-only isn't free either: it **loops** on multi-step tasks
+## Result 2 — some reasoning headroom remains — but likely a 9B-capability issue
 
-- On tasks that need several steps — open multiple items, compare an attribute, then commit — the
-  9B **re-issues the same action and never converges**, hitting the step cap instead of finishing.
-- Its **full action history is in context**, yet it doesn't use it to notice "I already did this."
-- So the residual text failures are a **multi-turn orchestration** problem — a *different* axis
-  from GUI perception, and a real 9B limitation. This bounds the headline (*"reasoning is fine"*
-  is too strong), but note it's **execution over turns**, not the visual bottleneck of Result 1:
-  removing vision still doubles success *despite* this.
+- Text-only isn't perfect: on multi-step tasks (open several items, compare an attribute, commit)
+  the 9B **loops** — re-issuing the same action and hitting the step cap instead of finishing.
+- So even after vision is removed, **some web-task reasoning headroom is still on the table.**
+- **But this is plausibly just the 9B's capability ceiling, not a fundamental barrier:** the full
+  action history is in context, and the failure looks like a small model not exploiting it.
+  Whether a **larger model** closes this gap is **untested** (see caveats) — so we read it as a
+  *possible* capability limit, not a hard claim, and separate from the visual bottleneck of Result 1.
 
 ## Why — what "visual understanding" bundles
 
