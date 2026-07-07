@@ -25,32 +25,33 @@ hidden: true
 - **vision condition:** observation = **screenshot**; actions = **pixel coordinates**.
 - Only the **modality** differs; the model, tasks, decoding, and judge are held fixed.
 
-## Result 1 — text beats pixels on *every* site: **+40pp overall**
+## Result 1 — GUI understanding, not reasoning, is the bottleneck: **+40pp**
 
 {% include figure.liquid loading="lazy" path="assets/img/posts/the-visual-understanding-tax-a-9b-web-agent-text-vs-pixels/tax_by_site.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
-- **Overall: text-MDP 68% vs vision 28% → +40pp.** Removing the visual channel **~doubles** success.
-- Per-site tax ranges **+10pp (ubereats) → +65pp (gcalendar)**; text wins everywhere.
-- **Vision never clears 50%** on any site — the 9B can barely operate a GUI through pixels.
+- **Overall: text-MDP 68% vs vision 28% → +40pp.** The *same weights* solve far more when the
+  environment is handed to them as text — so the planning/reasoning was largely **already there**;
+  what's missing is **perceiving and operating the GUI through pixels**.
+- Text **wins on all 10 sites** (per-site tax +10pp → +65pp); **vision never clears 50%** anywhere.
+- **Main finding:** in these web-agent tasks the bottleneck is **understanding the GUI visually,
+  more than task reasoning** — remove the visual channel and success **~doubles**.
 
-## Result 2 — the tax doesn't track *visual richness*
+## Result 2 — text-only isn't free either: it **loops** on multi-step tasks
 
-- The largest gaps are on **text-heavy** sites: **stackoverflow +55pp**, linkedin +50, github +45.
-- Image-heavy shopping/listing sites aren't where vision suffers most (amazon +40, zillow +20).
-- **Takeaway:** the bottleneck is **broad GUI grounding**, not any one flashy visual feature —
-  the vision model is weak at *reading and acting on* interface layout across the board.
+- On tasks that need several steps — open multiple items, compare an attribute, then commit — the
+  9B **re-issues the same action and never converges**, hitting the step cap instead of finishing.
+- Its **full action history is in context**, yet it doesn't use it to notice "I already did this."
+- So the residual text failures are a **multi-turn orchestration** problem — a *different* axis
+  from GUI perception, and a real 9B limitation. This bounds the headline (*"reasoning is fine"*
+  is too strong), but note it's **execution over turns**, not the visual bottleneck of Result 1:
+  removing vision still doubles success *despite* this.
 
-## Why — what "visual understanding" actually bundles
+## Why — what "visual understanding" bundles
 
 - The text condition removes the **whole GUI stack at once**: (1) **perception** (read the screen),
   (2) **affordance inference** (what's actionable), (3) **coordinate grounding** (where to click).
-- So the +40pp is the **cost of that whole stack** — *not* pixel-coordinate grounding alone.
+- So the +40pp is the cost of **that whole stack** — *not* pixel-coordinate grounding alone.
   Call it a **"visual-understanding tax,"** not a "grounding tax."
-- **Text isn't perfect either.** It fails on **comparison / multi-turn tasks** (open N items,
-  compare an attribute, pick the max): the 9B **loops** — re-issuing the same action instead of
-  converging, even though its full action history is in context. So *"reasoning is fine, only
-  vision is the problem"* is **too strong**: multi-turn orchestration is a genuine 9B limitation
-  (worst on zillow/ubereats, where text is only 35–40%).
 
 ## Caveats (honest)
 
@@ -66,8 +67,9 @@ hidden: true
 
 ## Takeaway
 
-- **For a 9B web agent, going through the eyes costs ~40pp of task success (28% → 68%).**
-  The planning is largely there; **wiring it to a GUI via pixels is where it breaks.**
+- **In web-agent tasks, the bottleneck is visual GUI understanding, not task reasoning.** Handing
+  a 9B the *same* tasks as text instead of pixels **~doubles** success (28% → 68%). What's left of
+  the text agent's failures is **multi-turn execution** (looping), not perception.
 
 ## Code
 
