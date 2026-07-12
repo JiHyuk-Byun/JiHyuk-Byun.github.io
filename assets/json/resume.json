@@ -56,7 +56,14 @@
   "skills": [
     {
       "name": "Research",
-      "keywords": ["Computer Vision", "Deep Learning", "Agentic AI", "3D Vision", "Vision Language Models", "Multimodal Learning"]
+      "keywords": [
+        "Computer Vision",
+        "Deep Learning",
+        "Agentic AI",
+        "3D Vision",
+        "Vision Language Models",
+        "Multimodal Learning"
+      ]
     }
   ]
 }

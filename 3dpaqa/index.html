@@ -70,17 +70,32 @@
           </p>
           <div class="project-actions">
             <a
-              class="btn btn-outline-primary z-depth-0"
+              class="btn paqa-btn"
               href="/assets/pdf/2025QA3D.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              >Paper</a
+              ><i class="fa-solid fa-file-pdf"></i>Paper</a
             >
-            <span class="btn is-soon" aria-disabled="true"
-              >Code Coming Soon</span
+            <a
+              class="btn paqa-btn"
+              href="https://github.com/JiHyuk-Byun/QT"
+              target="_blank"
+              rel="external nofollow noopener"
+              ><i class="fa-brands fa-github"></i>Code</a
             >
-            <span class="btn is-soon" aria-disabled="true"
-              >Dataset Coming Soon</span
+            <a
+              class="btn paqa-btn"
+              href="https://huggingface.co/datasets/JiHyuk-Byun/3D-PAQA"
+              target="_blank"
+              rel="external nofollow noopener"
+              ><i class="fa-solid fa-cubes"></i>Dataset</a
+            >
+            <a
+              class="btn paqa-btn"
+              href="https://huggingface.co/JiHyuk-Byun/3D-PAQA-evaluator"
+              target="_blank"
+              rel="external nofollow noopener"
+              ><i class="fa-solid fa-flask"></i>Evaluator</a
             >
           </div>
         </header>
@@ -148,6 +163,10 @@
             <strong>33M</strong
             ><span>parameter 3D evaluator distilled from annotations</span>
           </div>
+          <div class="paqa-stat">
+            <strong>≈$0</strong
+            ><span>per refinement step, vs. ≈$0.064 for an MLLM judge</span>
+          </div>
         </section>
 
         <section class="paqa-section">
@@ -172,6 +191,14 @@
               <p>
                 A compact 3D-native model predicts criterion-wise quality
                 signals for evaluation and curation workflows.
+              </p>
+            </section>
+            <section>
+              <h3>Refinement reward</h3>
+              <p>
+                The evaluator can also verify an LLM agent's generation loop,
+                steering it to raise an asset's weakest quality criterion over
+                successive iterations.
               </p>
             </section>
           </div>

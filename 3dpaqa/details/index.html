@@ -266,16 +266,71 @@
               </figcaption>
             </figure>
           </section>
+
+          <section class="paqa-slide paqa-slide--stacked">
+            <div class="paqa-slide-copy">
+              <span class="paqa-slide-number">07 / Refinement</span>
+              <h2>The evaluator closes the loop as a generation reward.</h2>
+              <p>
+                Beyond offline benchmarking, the 3D-Evaluator can act directly
+                as a verifier inside a generation loop. An LLM agent writes a
+                Blender (<code>bpy</code>) script that builds and exports a
+                mesh; the 3D-Evaluator scores the asset on the six criteria and
+                returns the criterion-wise scores together with the current
+                weakest criterion; the agent then revises its script to raise
+                that criterion and re-exports.
+              </p>
+              <ul>
+                <li>
+                  Guided only by this per-criterion feedback, each seed asset
+                  matures into a coherent, detailed one over successive
+                  iterations.
+                </li>
+                <li>
+                  For the castle example, texture rises by +1.03, material by
+                  +1.02, and overall preference by +1.03 (3.28 → 4.32), with
+                  the largest gains on the initially weakest criteria.
+                </li>
+                <li>
+                  Reported as a feasibility study: the visible, human-verifiable
+                  transformation is the primary evidence, with the rising
+                  scores as corroboration.
+                </li>
+              </ul>
+              <div class="paqa-note">
+                Each evaluation is a single local forward pass of the 33M
+                model: ≈$0 and &lt;1s, versus ≈$0.064 and ~15s for an
+                equivalent MLLM judge — roughly 16 refinement steps per $1 for
+                the MLLM judge against unbounded local steps for the
+                3D-Evaluator, which is what makes closed-loop quality-guided
+                generation practical.
+              </div>
+            </div>
+            <figure class="paqa-figure">
+              <img
+                src="/assets/img/3dpaqa/asset-refinement.png"
+                alt="Evaluator-guided asset refinement across five objects, seed to final, with per-criterion score gains"
+              />
+              <figcaption>
+                An LLM agent generates and iteratively revises each asset in
+                Blender using the 3D-Evaluator as the verifier; the criterion
+                weakest at the seed (highlighted) improves the most.
+              </figcaption>
+            </figure>
+          </section>
         </div>
 
         <section class="paqa-limitations">
           <h2>Applications and current limits</h2>
           <p>
-            The quality signal can support evaluation, repository curation, and
-            future quality-guided generation or refinement. The current work
-            builds the supervision and evaluator foundation; full downstream
-            validation, transfer to AI-generated assets, and
-            application-specific model ranking remain future work.
+            The quality signal supports evaluation, repository curation, and
+            quality-guided asset refinement: Section 07 above demonstrates a
+            first feasibility study where the evaluator steers an LLM agent's
+            generation loop. Tighter integration into generative models
+            themselves (e.g. differentiable rendering or score-distillation
+            objectives), a systematic study of refinement gains at scale,
+            downstream validation as a dataset curator, and transfer to
+            AI-generated assets remain future work.
           </p>
         </section>
       </article>

@@ -38,8 +38,10 @@ ninja.data = [
   },
   {
     id: "pub-webstep",
-    title: "Where Did It Go Wrong? Process-Level Evaluation of Web Agents with Semantic State Tracking",
-    description: "Jiwan Chung, JiHyuk Byun, Vibhav Vineet, Seon Joo Kim. Published in April 2026.",
+    title:
+      "Where Did It Go Wrong? Process-Level Evaluation of Web Agents with Semantic State Tracking",
+    description:
+      "Jiwan Chung, JiHyuk Byun, Vibhav Vineet, Seon Joo Kim. Published in April 2026.",
     section: "Publications",
     handler: () => {
       window.location.href = "/publications/";
@@ -67,7 +69,10 @@ ninja.data = [
     title: "Google Scholar",
     section: "Socials",
     handler: () => {
-      window.open("https://scholar.google.com/citations?user=ZUOimHsAAAAJ&hl=ko&oi=ao", "_blank");
+      window.open(
+        "https://scholar.google.com/citations?user=ZUOimHsAAAAJ&hl=ko&oi=ao",
+        "_blank",
+      );
     },
   },
   {
@@ -83,7 +88,10 @@ ninja.data = [
     title: "LinkedIn",
     section: "Socials",
     handler: () => {
-      window.open("https://www.linkedin.com/in/jihyuk-byun-b29545260/", "_blank");
+      window.open(
+        "https://www.linkedin.com/in/jihyuk-byun-b29545260/",
+        "_blank",
+      );
     },
   },
 ];

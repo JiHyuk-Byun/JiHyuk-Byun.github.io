@@ -22,19 +22,19 @@ window.dataLayer = window.dataLayer || [];
 
 // Reuse existing global gtag if it was already defined (e.g. by other GA scripts)
 // to avoid redefining it multiple times when consent is granted.
-if (typeof window.gtag !== 'function') {
-  window.gtag = function() {
+if (typeof window.gtag !== "function") {
+  window.gtag = function () {
     window.dataLayer.push(arguments);
   };
 }
 
 // Local alias for convenience in this file
 var gtag = window.gtag;
-gtag('consent', 'default', {
-  'ad_storage': 'denied',
-  'analytics_storage': 'denied',
-  'functionality_storage': 'denied',
-  'personalization_storage': 'denied'
+gtag("consent", "default", {
+  ad_storage: "denied",
+  analytics_storage: "denied",
+  functionality_storage: "denied",
+  personalization_storage: "denied",
 });
 
 // Wait for the library to be available
@@ -48,7 +48,7 @@ function initializeCookieConsent() {
       // Library not yet loaded, try again after a short delay
       setTimeout(initializeCookieConsent, 100);
     } else {
-      console.error('CookieConsent library failed to load');
+      console.error("CookieConsent library failed to load");
     }
     return;
   }
@@ -57,62 +57,67 @@ function initializeCookieConsent() {
     categories: {
       necessary: {
         enabled: true,
-        readOnly: true
+        readOnly: true,
       },
-      analytics: {}
+      analytics: {},
     },
 
     language: {
-      default: 'en',
+      default: "en",
       translations: {
         en: {
           consentModal: {
-            title: 'We use cookies',
-            description: 'This website uses cookies to improve your experience and analyze site traffic. By clicking "Accept all", you consent to our use of cookies.',
-            acceptAllBtn: 'Accept all',
-            acceptNecessaryBtn: 'Reject all',
-            showPreferencesBtn: 'Manage Individual preferences'
+            title: "We use cookies",
+            description:
+              'This website uses cookies to improve your experience and analyze site traffic. By clicking "Accept all", you consent to our use of cookies.',
+            acceptAllBtn: "Accept all",
+            acceptNecessaryBtn: "Reject all",
+            showPreferencesBtn: "Manage Individual preferences",
           },
           preferencesModal: {
-            title: 'Manage cookie preferences',
-            acceptAllBtn: 'Accept all',
-            acceptNecessaryBtn: 'Reject all',
-            savePreferencesBtn: 'Accept current selection',
-            closeIconLabel: 'Close modal',
+            title: "Manage cookie preferences",
+            acceptAllBtn: "Accept all",
+            acceptNecessaryBtn: "Reject all",
+            savePreferencesBtn: "Accept current selection",
+            closeIconLabel: "Close modal",
             sections: [
               {
-                title: 'Cookie usage',
-                description: 'We use cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want.'
+                title: "Cookie usage",
+                description:
+                  "We use cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want.",
               },
               {
-                title: 'Strictly Necessary cookies',
-                description: 'These cookies are essential for the proper functioning of the website. Without these cookies, the website would not work properly.',
-                linkedCategory: 'necessary'
+                title: "Strictly Necessary cookies",
+                description:
+                  "These cookies are essential for the proper functioning of the website. Without these cookies, the website would not work properly.",
+                linkedCategory: "necessary",
               },
               {
-                title: 'Analytics cookies',
-                description: 'These cookies allow us to measure traffic and analyze your behavior to improve our service.',
-                linkedCategory: 'analytics'
+                title: "Analytics cookies",
+                description:
+                  "These cookies allow us to measure traffic and analyze your behavior to improve our service.",
+                linkedCategory: "analytics",
               },
               {
-                title: 'More information',
-                description: 'For any queries in relation to our policy on cookies and your choices, please <a class="cc-link" href="https://jihyuk-byun.github.io/#contact">contact us</a>.'
-              }
-            ]
-          }
-        }
-      }
+                title: "More information",
+                description:
+                  'For any queries in relation to our policy on cookies and your choices, please <a class="cc-link" href="https://jihyuk-byun.github.io/#contact">contact us</a>.',
+              },
+            ],
+          },
+        },
+      },
     },
 
     // Callback when user accepts/rejects consent
-    onFirstConsent: function(consentData) {
+    onFirstConsent: function (consentData) {
       updateConsentMode(consentData);
     },
 
     // Callback when user changes preferences
-    onChange: function(consentData) {
+    onChange: function (consentData) {
       updateConsentMode(consentData);
-    }
+    },
   });
 
   /**
@@ -124,24 +129,26 @@ function initializeCookieConsent() {
     var categories = consentData.categories || consentData;
 
     // Ensure categories is an object
-    if (!categories || typeof categories !== 'object') {
-      console.warn('Invalid consent data structure:', consentData);
+    if (!categories || typeof categories !== "object") {
+      console.warn("Invalid consent data structure:", consentData);
       return;
     }
 
-    gtag('consent', 'update', {
-      'analytics_storage': categories.analytics ? 'granted' : 'denied',
-      'ad_storage': 'denied',
-      'functionality_storage': 'denied',
-      'personalization_storage': 'denied'
+    gtag("consent", "update", {
+      analytics_storage: categories.analytics ? "granted" : "denied",
+      ad_storage: "denied",
+      functionality_storage: "denied",
+      personalization_storage: "denied",
     });
 
     if (categories.analytics) {
-      console.debug('✓ Analytics consent granted - tracking enabled for all providers');
+      console.debug(
+        "✓ Analytics consent granted - tracking enabled for all providers",
+      );
       // Analytics scripts with data-category="analytics" will automatically run
       // when the library re-evaluates them after this consent update
     } else {
-      console.debug('✗ Analytics consent denied - no tracking data collected');
+      console.debug("✗ Analytics consent denied - no tracking data collected");
       // Analytics scripts are already blocked by the library (type="text/plain")
       // No tracking will occur for:
       // - Cronitor RUM
@@ -154,4 +161,3 @@ function initializeCookieConsent() {
 
 // Initialize when the library is available
 initializeCookieConsent();
-
