@@ -46,6 +46,11 @@ body {
   margin-bottom: 1.55rem;
 }
 
+.profile-home .post-title {
+  font-size: 2.1rem;
+  margin-bottom: 0.9rem;
+}
+
 .post-list li .post-title {
   display: inline-block;
   font-size: 1.5rem;
@@ -73,9 +78,9 @@ body {
 .profile-summary {
   align-items: center;
   display: grid;
-  gap: 3.2rem;
-  grid-template-columns: 300px minmax(0, 1fr);
-  margin-bottom: 2rem;
+  gap: 2.2rem;
+  grid-template-columns: 220px minmax(0, 1fr);
+  margin-bottom: 1.4rem;
 }
 
 .profile-photo-card {
@@ -108,6 +113,7 @@ body {
   justify-content: center;
   margin-right: 0.55rem;
   text-decoration: none;
+  vertical-align: middle;
   width: 2.15rem;
 }
 
@@ -119,8 +125,6 @@ body {
   font-weight: 600;
   height: 2.15rem;
   letter-spacing: 0;
-  line-height: 2.15rem;
-  padding-top: 0.02rem;
   text-align: center;
   width: 2.15rem;
 }
