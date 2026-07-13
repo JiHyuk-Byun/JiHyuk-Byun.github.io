@@ -2,6 +2,13 @@
   <!-- Nav Bar -->
   <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation">
     <div class="container">
+      <!--
+        Points to the main (static) site's root, outside this Jekyll blog's
+        baseurl (/blog). Use an absolute root path, NOT relative_url.
+      -->
+      <a class="navbar-brand title font-weight-lighter" href="/"
+        ><span class="font-weight-bold">JiHyuk</span> Byun</a
+      >
       <!-- Navbar Toggle -->
       <button
         class="navbar-toggler collapsed ml-auto"
