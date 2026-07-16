@@ -19,8 +19,9 @@ layout: post
 - **Main question:** what is the **tax** a VLM pays for going through the human GUI instead of a
   text-only UI? Equivalently — is web-agent performance bottlenecked by **reading the GUI**, not by
   the task reasoning?
-- (Spoiler: the answer is *not* "throw away the GUI" — it's that **pixels-only is an expensive
-  interface**, and machine-friendly channels should be offered *alongside* it. See Takeaway.)
+- (Spoiler: the answer is *not* "throw away the GUI" — what we find is a **visual-interaction
+  bottleneck**: with today's human-facing GUI, reading and operating the screen costs far more
+  than the task reasoning itself. See Takeaway.)
 
 ## Setup
 
@@ -67,9 +68,9 @@ layout: post
   interface: Webstep hands the agent a clean `observe()`/`dispatch` pair. Real websites don't —
   the practical stand-ins are the **DOM, the accessibility tree, ARIA roles, or semantic action
   APIs**, all noisier and less aligned with the rendered page than a ground-truth MDP.
-- So read the +40pp as a **ceiling** on what machine-friendly interfaces could recover, and as
-  evidence that **serving an agent *only* the human pixel GUI is inefficient** — not that vision
-  has no role.
+- So read the +40pp as a **measurement of the visual-interaction bottleneck** — an upper bound on
+  what removing it could recover — not as a prescription for how web interfaces should change, and
+  not as a claim that vision has no role.
 - **Vision still earns its keep** where structure is missing or misleading: canvas/image-only
   content, visual-only cues (layout, emphasis, occlusion), and as a cross-check when the DOM and
   the rendered page disagree.
@@ -91,13 +92,12 @@ layout: post
 
 ## Takeaway
 
-- **Serving a web agent *only* the human pixel GUI is inefficient.** Rendering the *same* MDP as a
-  VLM-friendly **text UI** instead of pixels **~doubles** a 9B's success (28% → 68%, **+40pp**) —
-  the bottleneck is **reading the GUI, not the task reasoning.**
-- The constructive claim: **where possible, expose machine-friendly interfaces — DOM, accessibility
-  tree, semantic actions — *alongside* the GUI**, and let the agent lean on them. This is *not*
-  GUI abolition: the text-MDP here is an idealized ceiling, and vision still matters for
-  unstructured or visual-only content.
+- **With today's human-facing GUI, a VLM web agent hits a *visual-interaction* bottleneck.**
+  Rendering the *same* MDP as a VLM-friendly **text UI** instead of pixels **~doubles** a 9B's
+  success (28% → 68%, **+40pp**) — the cost sits in **reading and operating the GUI, not in the
+  task reasoning.**
+- That's the whole claim — a *measurement*, not a prescription: the text-MDP here is an idealized
+  ceiling, and vision still matters for unstructured or visual-only content.
 - What's left of the text agent's failures is **multi-turn execution** (looping), possibly just a
   9B capability limit.
 
