@@ -1,118 +1,93 @@
 ---
-title: "Does a VLM web agent even need the GUI?"
+title: "The visual-interaction tax: what a VLM web agent pays for the human GUI"
 date: 2026-07-08
 tags: [web-agents, multimodal, evaluation, grounding]
 categories: [experiments]
 layout: post
 ---
 
-## Question — does a web agent even need the (human-facing) GUI?
+## Question — what does the human-facing GUI *cost* a VLM web agent?
 
-- A GUI is designed for **humans**. But a web agent is a **VLM** — it *can* see, yet is the GUI
-  the right interface for it, or just an accident of the app having been built for people?
-- **[Webstep](https://jiwanchung.github.io/webstep/)** lets us ask this cleanly: it models each web
-  app as a deterministic **MDP** (state, fixed action set, pure transitions), where the GUI is only
-  *one rendering* of that MDP.
-- Decouple the GUI from the MDP and you can render the *same* MDP two ways — a **human-friendly GUI**
-  (pixels) or a **VLM-friendly text UI** (state + available actions). Same information, only the
-  modality differs.
-- **Main question:** what is the **tax** a VLM pays for going through the human GUI instead of a
-  text-only UI? Equivalently — is web-agent performance bottlenecked by **reading the GUI**, not by
-  the task reasoning?
-- (Spoiler: the answer is *not* "throw away the GUI" — what we find is a **visual-interaction
-  bottleneck**: with today's human-facing GUI, reading and operating the screen costs far more
-  than the task reasoning itself. See Takeaway.)
+- A web GUI is designed for **humans**; a VLM agent uses it because that's what the app happens
+  to expose. Using it isn't free: the agent must **read pixels, infer what's clickable, and aim
+  coordinates** before any task reasoning pays off.
+- **This post measures that price.** Call it the **visual-interaction tax**: the success-rate gap
+  between running a task through the human GUI and running the *same* task through an equivalent
+  text interface.
+- **[Webstep](https://jiwanchung.github.io/webstep/)** makes the measurement clean: each web app is
+  a deterministic **MDP** (state, fixed action set, pure transitions), and the GUI is just *one
+  rendering* of it. Render the same MDP as **pixels** or as **text** — same information, same
+  tasks, same model; only the interface differs. The performance gap *is* the tax.
 
 ## Setup
 
 - **Model:** `Qwen3.5-9B` (unified multimodal), one vLLM server, **greedy** decoding (temp 0).
 - **Benchmark:** Webstep — deterministic MDP web tasks, **10 sites, 220 tasks**. Both conditions
   run the *identical* task set (fixed seed), same 3-step memory window, same per-episode cap.
+- **GUI condition:** observation = **screenshot**; actions = **pixel coordinates**.
 - **text-MDP condition:** observation = the site's `observe()` output serialized to text
   (visibility-filtered → **the same information the screen shows**); actions = semantic
   `{type, payload}` applied **directly through the MDP** (`dispatch`), no pixels, no coordinates.
-- **vision condition:** observation = **screenshot**; actions = **pixel coordinates**.
-- Only the **modality** differs; the model, tasks, decoding, and judge are held fixed.
+- Only the **interface** differs; the model, tasks, decoding, and judge are held fixed.
 
-## Result 1 — GUI understanding, not reasoning, is the bottleneck: **+40pp**
+## Result 1 — the tax is large: **+40pp**, on every site
 
 {% include figure.liquid loading="lazy" path="assets/img/posts/does-a-vlm-web-agent-even-need-the-gui/tax_by_site.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
-- **Overall: text-MDP 68% vs vision 28% → +40pp.** The *same weights* solve far more when the
-  environment is handed to them as text — so the planning/reasoning was largely **already there**;
-  what's missing is **perceiving and operating the GUI through pixels**.
-- Text **wins on all 10 sites** (per-site tax +10pp → +65pp); **vision never clears 50%** anywhere.
-- **Main finding:** in these web-agent tasks the bottleneck is **understanding the GUI visually,
-  more than task reasoning** — remove the visual channel and success **~doubles**.
+- **Overall: text-MDP 68% vs GUI 28% → a +40pp tax.** The *same weights* solve ~2.4× more tasks
+  when the interface is text — so a large share of GUI-condition failures were **interface
+  failures, not task failures**.
+- The tax is **universal, not site-specific**: text wins on **all 10 sites** (+10pp → +65pp), and
+  the GUI condition **never clears 50%** anywhere.
 
-## Result 2 — some reasoning headroom remains — but likely a 9B-capability issue
+## Result 2 — removing the tax doesn't solve the task: multi-step execution still fails
 
-- Text-only isn't perfect: on multi-step tasks (open several items, compare an attribute, commit)
-  the 9B **loops** — re-issuing the same action and hitting the step cap instead of finishing.
-- So even after vision is removed, **some web-task reasoning headroom is still on the table.**
-- **But this is plausibly just the 9B's capability ceiling, not a fundamental barrier:** the full
-  action history is in context, and the failure looks like a small model not exploiting it.
-  Whether a **larger model** closes this gap is **untested** (see caveats) — so we read it as a
-  *possible* capability limit, not a hard claim, and separate from the visual bottleneck of Result 1.
+- Text-MDP reaches 68%, **not 100%**: on multi-step tasks (open several items, compare an
+  attribute, commit) the 9B **loops** — re-issuing the same action until the step cap.
+- So the interface is **not the whole story**: even with the GUI cost at zero, a real
+  **execution/reasoning gap remains**.
+- *Caveat (unverified):* the full action history is in context, and the looping looks like a small
+  model failing to exploit it — plausibly a **9B capability ceiling** rather than something
+  fundamental. Untested at larger scale (see Caveats).
 
-## Why — what "visual understanding" bundles
+## Anatomy of the tax — what the GUI condition bundles
 
-- The text condition removes the **whole GUI stack at once**: (1) **perception** (read the screen),
+- Switching to text removes the **whole GUI stack at once**: (1) **perception** (read the screen),
   (2) **affordance inference** (what's actionable), (3) **coordinate grounding** (where to click).
-- So the +40pp is the cost of **that whole stack** — *not* pixel-coordinate grounding alone.
-  Call it a **"visual-understanding tax,"** not a "grounding tax."
-
-## What this does — and does not — say
-
-- **It does *not* say the GUI is useless.** The text-MDP condition is an **idealized** machine
-  interface: Webstep hands the agent a clean `observe()`/`dispatch` pair. Real websites don't —
-  the practical stand-ins are the **DOM, the accessibility tree, ARIA roles, or semantic action
-  APIs**, all noisier and less aligned with the rendered page than a ground-truth MDP.
-- So read the +40pp as a **measurement of the visual-interaction bottleneck** — an upper bound on
-  what removing it could recover — not as a prescription for how web interfaces should change, and
-  not as a claim that vision has no role.
-- **Vision still earns its keep** where structure is missing or misleading: canvas/image-only
-  content, visual-only cues (layout, emphasis, occlusion), and as a cross-check when the DOM and
-  the rendered page disagree.
+- So +40pp prices **the bundle**, not any single layer — a **"visual-interaction tax,"** not a
+  "grounding tax." Which layer dominates is an open question (below).
 
 ## Caveats (honest)
 
-- **What it measures:** the whole perception + affordance + grounding stack, not coordinate
-  grounding in isolation. A cleaner isolation (text obs, but *coordinate* actions) is future work.
-- **Idealized text interface:** the MDP's `observe()` is a best-case machine channel; real-world
-  DOM/accessibility trees are noisier, so real-world gains from machine interfaces are likely
-  **smaller than +40pp** (untested here).
-- **Model scale:** the bottleneck is measured at the **~9B scale, single model/seed, greedy**.
-  Screenshot grounding is known to improve with scale and with grounding-specialized training, so
-  the tax may be **much smaller for larger or computer-use-tuned models** — whether a larger model
-  closes the gap (on either side) is **not yet tested** (a scale run was blocked on disk). Even at
+- **Model scale:** measured at the **~9B scale, single model/seed, greedy**. Screenshot grounding
+  improves with scale and grounding-specialized training, so the tax is likely **smaller for
+  larger or computer-use-tuned models** — untested here (a scale run was blocked on disk). Even at
   temp 0, run-to-run variance is ~2–3pp (vLLM batching).
+- **Idealized text interface:** the MDP's `observe()`/`dispatch` is a **best-case** machine
+  channel that real websites don't expose; realistic stand-ins (DOM, accessibility tree) are
+  noisier. Read +40pp as an **upper bound** on what a text channel could recover.
 - **Fairness fix:** the text view initially didn't expose the sites' **filter/sort vocabularies**
-  (which the vision agent sees as dropdown options), so text hallucinated invalid filters. We
+  (which the GUI agent sees as dropdown options), so text hallucinated invalid filters. We
   surfaced the real allow-lists from the transition functions before the final run; it restored
   parity but didn't move the aggregate (the bottleneck is comparison, not filtering).
 
 ## Remaining questions
 
-- **What *is* an agent-friendly UI?** The text-MDP here is ground truth the wild doesn't offer.
-  Among the realistic channels — **DOM, accessibility tree, semantic action APIs** — which noisy
-  approximation retains most of the +40pp, and at what serialization cost (token length, staleness)?
-- **Which layer of the human-facing GUI is the biggest bottleneck?** The +40pp bundles
-  (1) perception, (2) affordance inference, (3) coordinate grounding. Ablations that move one layer
-  at a time — e.g. text observations with *coordinate* actions, screenshots with *semantic* actions,
-  or Set-of-Mark-style annotated screenshots — would split the tax by layer and say where an
-  agent-friendly UI should spend its effort first.
+- **Which layer dominates the tax?** Ablations that move one layer at a time — text observations
+  with *coordinate* actions, screenshots with *semantic* actions, Set-of-Mark-style annotated
+  screenshots — would split the +40pp across perception / affordance / grounding.
+- **What would an agent-friendly UI be?** The text-MDP is ground truth the wild doesn't offer.
+  Among realistic channels — **DOM, accessibility tree, semantic action APIs** — which noisy
+  approximation retains most of the tax refund, and at what serialization cost (token length,
+  staleness)?
 
 ## Takeaway
 
-- **With today's human-facing GUI, a VLM web agent hits a *visual-interaction* bottleneck.**
-  Rendering the *same* MDP as a VLM-friendly **text UI** instead of pixels **~doubles** a 9B's
-  success (28% → 68%, **+40pp**) — the cost sits in **reading and operating the GUI, not in the
-  task reasoning.**
-- That's the whole claim — a *measurement*, not a prescription: the text-MDP here is an idealized
-  ceiling, and vision still matters for unstructured or visual-only content.
-- What's left of the text agent's failures is **multi-turn execution** (looping), possibly just a
-  9B capability limit.
+- **At the ~9B scale, a VLM web agent pays a +40pp visual-interaction tax for the human-facing
+  GUI** (28% → 68% on identical tasks, worse on all 10 sites) — a *measurement* of the interface's
+  price, not a prescription about interfaces and not GUI abolition.
+- And the interface isn't everything: **remove the tax and multi-step execution still fails** —
+  the residual 32% is an execution/reasoning gap, possibly just model scale.
 
 ## Code
 
