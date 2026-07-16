@@ -82,13 +82,26 @@ layout: post
 - **Idealized text interface:** the MDP's `observe()` is a best-case machine channel; real-world
   DOM/accessibility trees are noisier, so real-world gains from machine interfaces are likely
   **smaller than +40pp** (untested here).
-- **Single model / seed, greedy.** *Caveat (unverified):* whether a **larger model** closes the
-  gap — on the vision side or the text-comparison side — is **not yet tested** (a scale run was
-  blocked on disk). Even at temp 0, run-to-run variance is ~2–3pp (vLLM batching).
+- **Model scale:** the bottleneck is measured at the **~9B scale, single model/seed, greedy**.
+  Screenshot grounding is known to improve with scale and with grounding-specialized training, so
+  the tax may be **much smaller for larger or computer-use-tuned models** — whether a larger model
+  closes the gap (on either side) is **not yet tested** (a scale run was blocked on disk). Even at
+  temp 0, run-to-run variance is ~2–3pp (vLLM batching).
 - **Fairness fix:** the text view initially didn't expose the sites' **filter/sort vocabularies**
   (which the vision agent sees as dropdown options), so text hallucinated invalid filters. We
   surfaced the real allow-lists from the transition functions before the final run; it restored
   parity but didn't move the aggregate (the bottleneck is comparison, not filtering).
+
+## Remaining questions
+
+- **What *is* an agent-friendly UI?** The text-MDP here is ground truth the wild doesn't offer.
+  Among the realistic channels — **DOM, accessibility tree, semantic action APIs** — which noisy
+  approximation retains most of the +40pp, and at what serialization cost (token length, staleness)?
+- **Which layer of the human-facing GUI is the biggest bottleneck?** The +40pp bundles
+  (1) perception, (2) affordance inference, (3) coordinate grounding. Ablations that move one layer
+  at a time — e.g. text observations with *coordinate* actions, screenshots with *semantic* actions,
+  or Set-of-Mark-style annotated screenshots — would split the tax by layer and say where an
+  agent-friendly UI should spend its effort first.
 
 ## Takeaway
 
