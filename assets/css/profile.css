@@ -1,4 +1,6 @@
 /* Site-specific polish for a compact academic profile layout. */
+@import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap");
+
 :root {
   --global-theme-color: #5f86d8;
   --global-hover-color: #436ebf;
@@ -13,7 +15,7 @@ html {
 
 body {
   font-family:
-    "Roboto",
+    "Inter",
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
@@ -168,18 +170,19 @@ body {
 
 .section-heading {
   border-top: 1px solid rgba(32, 33, 36, 0.16);
-  color: #777;
+  color: #2b2d31;
   font-family:
-    "Roboto",
+    "Inter",
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
-  font-size: 1.78rem;
-  font-weight: 600;
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   margin-top: 2.45rem;
-  margin-bottom: 0.95rem;
-  padding-top: 1.2rem;
+  margin-bottom: 1.05rem;
+  padding-top: 1.1rem;
   padding-bottom: 0;
 }
 
@@ -187,8 +190,9 @@ body {
   color: inherit;
 }
 
-.news a strong {
-  border-bottom: 1px solid currentColor;
+a strong,
+a b {
+  color: inherit;
 }
 
 .news table th,
@@ -225,47 +229,103 @@ body {
 }
 
 .publications ol.bibliography li {
-  margin-bottom: 1.55rem;
+  background-color: var(--global-card-bg-color, #fff);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(31, 35, 40, 0.04);
+  margin-bottom: 1.1rem;
+  padding: 1.1rem;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.18s ease;
+}
+
+.publications ol.bibliography li:hover {
+  border-color: rgba(95, 134, 216, 0.35);
+  box-shadow: 0 10px 28px rgba(31, 35, 40, 0.09);
+  transform: translateY(-2px);
 }
 
 .publications ol.bibliography li .title {
-  font-size: 1.02rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  line-height: 1.35;
+  margin-bottom: 0.2rem;
 }
 
 .publications ol.bibliography li .author,
 .publications ol.bibliography li .periodical {
-  font-size: 0.96rem;
+  color: var(--global-text-color-light);
+  font-size: 0.94rem;
 }
 
 .publications ol.bibliography li .author .me {
   border-bottom: 1px solid currentColor;
+  color: var(--global-text-color);
   font-weight: 700;
 }
 
+.publications ol.bibliography li .tldr {
+  color: var(--global-text-color);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin-top: 0.45rem;
+}
+
 .publications ol.bibliography li .links {
-  margin-top: 0.25rem;
+  margin-top: 0.55rem;
 }
 
 .publications ol.bibliography li .links a.btn {
-  border-color: var(--global-divider-color);
-  border-radius: 4px;
+  align-items: center;
+  border-color: var(--global-theme-color);
+  border-radius: 5px;
+  box-shadow: none;
+  color: var(--global-theme-color);
+  display: inline-flex;
   font-size: 0.78rem;
+  gap: 0.32rem;
   line-height: 1.25;
   margin-right: 0.25rem;
-  padding: 0.18rem 0.55rem;
+  padding: 0.22rem 0.6rem;
   text-transform: none;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.publications ol.bibliography li .links a.btn i {
+  font-size: 0.85em;
+}
+
+.publications ol.bibliography li .links a.btn:hover,
+.publications ol.bibliography li .links a.btn:focus {
+  background-color: var(--global-theme-color);
+  color: #fff;
+}
+
+.pub-thumb-frame {
+  border-radius: 8px;
+  display: block;
+  overflow: hidden;
 }
 
 .pub-thumb {
   background: #f3f6f9;
   border: 1px solid var(--global-divider-color);
-  border-radius: 4px;
+  border-radius: 8px;
   display: block;
-  height: 108px;
+  height: 118px;
   object-fit: cover;
   object-position: center;
+  transition: transform 0.35s ease;
   width: 100%;
+}
+
+.publications ol.bibliography li:hover .pub-thumb {
+  transform: scale(1.06);
 }
 
 .publications ol.bibliography li .abbr .pub-thumb {
